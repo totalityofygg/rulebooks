@@ -9,7 +9,7 @@ VERSION=v.2.0.0
 
 setup:
 	mkdir -p out
-	xelatex -output-driver="xdvipdfmx -V 5 -z 9" -jobname="Totality_of_Ygg_${VERSION}" -output-directory out rulebook
+	xelatex -output-driver="xdvipdfmx -V 6 -z 9" -jobname="Totality_of_Ygg_${VERSION}" -output-directory out rulebook
 
 clean:
 	rm -rf out/*
