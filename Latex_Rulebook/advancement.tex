@@ -1,0 +1,102 @@
+% (c) 2020 Stefan Antonowicz
+% Based off of tex found at https://github.com/ludus-leonis/nipajin
+% This file is released under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% Please do not apply other licenses one-way.
+
+\renewcommand{\yggAdvancement}{%
+  \mychapter{Advancement}{advancement}
+  \mysectionheader{advancement/AdvancementHeader}
+  \newpage
+}
+
+\renewcommand{\yggAdvancementText}{%
+
+\mysection{Glory}{advancement-glory}
+
+The longer lived your Adventurer, the more they increase in skill and power, represented by \mybold{Glory}. You earn Glory during \mylink{Downtime}{downtime}; when you gain enough Glory, you go up in Level, which grants you more \mylink{Grit}{adventurer-flesh-grit} and additional powers. The higher you go in \LVL, the more Glory you'll need to acquire. 
+
+During the \mylink{Training Step}{downtime-training} of \mylink{Downtime}{downtime}, you may convert your coin into Glory. The exchange rate depends on your level. You can spend enough coin to raise yourself to the next level, but not any further.
+
+\callout {
+    \mybullet {
+        \item  At Levels 1 and 2, you get 1 Glory for each \mybold{Iron piece} you convert. A Silver piece is worth 10 Glory, and a Gold piece is worth 100 Glory.
+        \item  At Levels 3, 4, and 5, you get 1 Glory for each \mybold{Silver piece} you convert. A Gold piece is worth 10 Glory. Iron pieces can't be converted.
+        \item  At Levels 6+, you get 1 Glory for each \mybold{Gold piece} you convert. Iron and Silver pieces can't be converted.
+    }
+}
+
+Converting coin to Glory in this way assumes you've been bribing sorcerers and librarians, buying books, paying someone to spar with, etc. You’ll note that it gets harder and harder to gain Glory with money as you go up in level. This is by design - legendary heroes aren’t getting Glory taking money from orc babies, but by doing epic shit. In time, the jewels cease to sparkle...
+
+\mysubsection{Adventure}{glory-adventure}
+
+
+The meta section of \mylink{the Game}{time-adventure} defines an Adventure as one or more Sessions. When your \mylink{Band}{roles-band} writes the last line of a chapter of their exploits, they complete an Adventure  (for example: Thundarr breaks the werewolf curse; Conan escapes the Demons of the Summit; Fafhrd and the Grey Mouser return to Lankhmar with Ohmphal's fingertips, etc.).  During the \mylink{The Arbiter's Step}{downtime-arbiter} of \mylink{Downtime}{downtime}, after you spend your coin, the Arbiter has a chance to award you additional Glory for the adventures you just survived.  This Glory might be for your entire Band, or it might be for an individual member; it might be enough to put you at the next level, or it might be enough to leave you shy by 1.  The Arbiter gets final say no matter what.  See the Arbiter's Step section under Downtime for more info.
+
+
+\mysection{Levels}{advancement-levels}
+
+Levels and Ranks are measures of how powerful you have become.  Every Adventurer starts as a Level 1 Greenhorn. The more Glory you win, the higher your Level and Rank:
+
+  \mytable{X X X X}{
+    \thead{Level} & \thead{Rank} & \thead{Min Glory} & \thead{Coin Type} \\
+  }{
+    1 & Greenhorn &  0 & Iron \\
+    2 & Daredevil &  1,000 & Iron \\
+    3 & Daredevil &  3,000 & Silver \\
+    4 & Hero &  6,000 & Silver \\
+    5 & Hero &  11,000 & Silver \\
+    6 & Hero &  19,000 & Gold \\
+    7 & Legend  & 32,000 & Gold \\
+    8 & Legend  & 53,000 & Gold \\
+    9 & Demigod & 87,000 & - \\    
+}
+
+Whenever you gain enough Glory to advance to the next level, your Grit goes up. Immediately roll your \INSANITY, \DEATH, and \INJURY dice (your \mylink{Kismet}{adventurer-kismet}) and add their total to your \MAX \mylink{Grit}{adventurer-flesh-grit}. Then, find your Trope or Species below and \mybold{choose 3} of the of the Daredevil, Heroic, and/or Legendary Virtues beneath.  
+
+\mybold{You can choose Daredevil Virtues at any level, Heroic Virtues at level 4+, and Legendary Virtues at level 7+}.
+
+
+\newpage
+
+\myimage{advancement/SeatedWizard}
+
+\cbreak
+
+\mysubsection{Arbiter's Awards}{advancement-arbiters-awards}
+
+At the Arbiter's complete discretion, you may be awarded extra perks based on how "heroic" your last level was. These perks can vary as the Arbiter sees fit, but should always be beneficial. Some examples from our campaigns:
+
+    \mybullet {
+        \item +4 Grit awarded to a Knave who risked being burned alive to have a "Michael Bay" moment as they walked away from an explosion;
+        \item +1 Flesh awarded to a Philosopher who failed their Mishap roll three times in a single Session, and became part pig, part goat, and part rooster;
+        \item +1 Save vs. Doom awarded to a Sellsword who made 6 consecutive Saves vs. Doom battling a horde of paralytic undead;
+        \item etc.
+    }
+
+
+% single page for this section
+\end{multicols*}
+\newpage
+\mysection{Tropes}{advancement-tropes}
+\input{advancement/knave.tex}
+\newpage
+\input{advancement/mystic.tex}
+\newpage
+\input{advancement/philosopher.tex}
+\newpage
+\input{advancement/sellsword.tex}
+\newpage
+\mysection{Species}{advancement-species}
+\input{advancement/murk.tex}
+\newpage
+\input{advancement/nightchildren.tex}
+\newpage
+\input{advancement/pooka.tex}
+\newpage
+\input{advancement/spriggan.tex}
+\newpage
+
+\begin{multicols*}{2}
+
+
+}%

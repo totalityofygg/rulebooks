@@ -1,0 +1,59 @@
+% (c) 2020 Stefan Antonowicz
+% Based off of tex found at https://github.com/ludus-leonis/nipajin
+% This file is released under Creative Commons
+% Attribution-NonCommercial-ShareAlike 4.0 International License.
+% Please do not apply other licenses one-way.
+
+\renewcommand{\yggResearch}{%
+  \mychapter{Research}{research}
+    \begin{center}
+    \includegraphics[width=\linewidth,keepaspectratio=true]{research/ResearchHeader}
+    \end{center}
+    \newpage
+}
+
+\renewcommand{\yggResearchText}{%
+
+\end{multicols*}
+
+\mybold{Research} is a catch-all term for the experimentation, analysis, reading, and application of "science" during \mylink{Downtime}{downtime}.  Your abilities as a researcher are measured by \mybold{\myanchor{Research Pips}{research-pips}} obtained through the Philosophic virtues of \mylink{Chymist}{philosopher-virtue-chymist} and \mylink{Scribe}{philosopher-virtue-scribe}, and through \mylink{Advancement}{advancement}.
+
+    Research Pips can be spent during the \mylink{Production Step}{downtime-production} of \mylink{Downtime}{downtime}. Any Research Pips you don't spend during the Production Step are lost at the end of the step.
+
+    Research also requires an expenditure of coin, representing the bribing of librarians, rental of laboratory equipment, purchase of legal and illegal inks, payment to grave-robbers for corpses, etc. The total cost to perform Research depends on the total number of Research Pips you spend: the first 5 pips will cost you 100 \FE \myital{each}; the next 5 pips cost you 100 \AG each; and every pip after that will cost you 100 \AU. For example, if you spend 12 Research pips, the total will be 500 \FE plus 500 \AG plus 200 \AU. 
+
+
+
+    \myctrtable{Y Y} {
+        \thead{\# Pips} & \thead{Coin per Pip} \\
+    } {
+        1-5 & 100\FE \\
+        6-10 & 100\AG \\
+        11+ & 100\AU
+    }
+
+
+The Arbiter is encouraged to expand the use of Research Pips to include any kind of investigation the Adventurers might attempt during Downtime (for instance, a player may wish to research a cure to a virulent disease, or the location of the Sepulcher of the Blood God, lost for some 1,000 years). Simply set a secret difficulty in number of pips (50 for the Sepulcher, say - or 20 for the cure to the disease). The Adventurers may spend their Research Pips against this total over multiple Sessions, each time coming closer to the answer. When they spend the 50th, 20th, etc. pip, they finally find what they've been looking for. A \mylink{Library}{gear-services-library} is required to perform this type of research, and the cost for pips is the same as above.
+
+\myfpimage{research/CowSkull}
+
+
+\example{
+    Craps Bastogne is a level 3 Philosopher who has dedicated his life to research - he has 6 Research Pips, and the Virtues \mylink{Chymist}{philosopher-virtue-chymist} and \mylink{Scribe}{philosopher-virtue-scribe}. He has 20\AU (or 200\AG) in his purse. Craps first scribes a spell from a Fetish he found into his Grimoire (1 Research Pip), and scribes a different spell to a new Fetish, the skin of a blind toad (1 Research Pip). He uses the toad's bile to create a \mylink{Noxious Toxin}{malignants-toxins} (2 Research Pips), and decides to put the final 2 Pips into deciphering the map to the Somatocyst of the Slumbering Medusa (originally requiring 10 Research Pips, Craps has slowly made progress - the Arbiter notes he only has 1 pip to go, so she'd better get cracking on that dungeon!). In total he has spent 6 Research Pips for all his activities, and must pay 500 \FE \PLUS 100 \AG in total (this is the same as 150 \AG, or 15 \AU). He subtracts 15\AU from his coins, and adds the Fetish and Toxin to his inventory.  If he had been short on money, he could have instead simply spent 1 Pip on the deciphering of the map, which would have dropped his costs to 500 \FE (or only 50\AG).
+
+}
+
+
+\newpage
+
+\begin{multicols*}{2}
+
+  \newpage
+  \input{research/chymistry.tex}
+  \newpage
+  \input{research/inscription.tex}
+  \newpage
+  \input{research/grimoire.tex}
+  \newpage
+
+}%end

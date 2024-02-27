@@ -1,0 +1,95 @@
+\end{multicols*}
+\mysection{Personality}{adventurer-personality}
+\summary{
+    Assign a d4 to each facet of your Personality. This die may be increased depending on your \mylink{Species}{adventurer-species}.
+}
+\begin{multicols*}{2}\raggedcolumns
+
+
+Personality represents the intangible aspects of what makes you \myital{you}. Like Identity, Personality is divided into four characteristics:
+
+\mybullet {
+    \item \hl{Presence} \PRE
+    \item \hl{Talent} \TAL
+    \item \hl{Awareness} \AWA
+    \item \hl{Clarity} \CLR
+}
+
+Your Personality is a Resource, and is assigned a \UDD{d4} to start. You can tap into aspects of your Personality to \mylink{Bump}{dice-bump} a \RO or \RB try that uses a corresponding aspect of your Identity:
+
+\mybullet {
+    \item \PRE augments \VIG;
+    \item \TAL augments \DEX;
+    \item \AWA augments \INT; and
+    \item \CLR augments \FOC
+}
+
+
+The Arbiter may also ask you to make a \RS try using an aspect of your Personality. 
+
+\mybold{You can always decline a Personality try}.
+
+Remember that the facets of your Personality are all \UD.  If you roll a Failure, the die moves \DCDOWN.
+
+\cbreak
+
+
+\examples {
+    The Band is delving a crypt, and a strange black mist begins to slowly creep up on the ground. The Arbiter asks the Band to make an \RSTRY{\AWA}  to notice "something unusual". Two of the Adventurers have their \AWA as a d2, so they demure (since the next roll would effectively Exhaust their \AWA), but the party's Spriggan decides to make a try. She succeeds and notices the black mist curling around her ankles.
+
+    \myskip
+
+    The Band enters a room through the only visible door. They decide to search for secret doors, each making a \RSTRY{\CLR} to see what they might find.
+
+    \myskip
+
+    You attempt an \mylink{Attack}{combat-attack-action} try while using a \VIG weapon. After rolling and adding your bonuses, your \SUMDICE is 18. You can "bump" your roll by trying your \PRE \UD and adding its \SUMDICE to the total (since \PRE augments \VIG). 
+}
+
+\newpage
+
+\mysubsection{Presence}{intangible-stats-presence}
+
+Confidence, attractiveness, leadership, and intimidation. The Arbiter might ask you if you'd like to \RSTRY{\PRE} if you're trying to sweet talk someone, keep a group of peons from breaking morale, or scaring a couple of kobolds into telling you what you want to know. 
+
+You can roll your \PRE and add its result to any \RO or \RB try you're making that involves \VIG.  
+
+\PRE is the Primary Stat for \mylink{Pooka}{species-pooka}.
+
+
+\mysubsection{Talent}{intangible-stats-talent}
+
+It always seems like you're in the right place at the right time, or that you have the favor of the Gods. The Arbiter might ask you if you'd like to \RSTRY{\TAL} if you're trying to see if something works by pure random luck ("I randomly press buttons on the console and hope something good happens"; "I close my eyes and try to jump off the roof into the hay cart").  
+
+You can roll your \TAL and add its result to any \RO or \RB try you're making that involves \DEX.  
+
+\TAL is the Primary Stat for \mylink{Night Children}{species-night-child}.
+
+
+\mysubsection{Awareness}{intangible-stats-awareness}
+
+Your idle perception, your "sixth sense". The Arbiter might ask you if you'd like to \RSTRY{\AWA} to see if you notice something that you might not be \myital{actively} looking for.
+
+You can roll your \AWA and add its result to any \RO or \RB try you're making that involves \INT.  
+
+\AWA is the Primary Stat for \mylink{Spriggan}{species-spriggan}.
+
+
+\mysubsection{Clarity}{intangible-stats-clarity}
+
+How lucid you are, how logical, and how likely you are to keep your cool.  The Arbiter might tell you to \RSTRY{\CLR} to tell if someone is lying, or find a secret door.
+
+You can roll your \CLR and add its result to any \RO or \RB try you're making that involves \FOC.  
+
+\CLR is the Primary Stat for \mylink{Murks}{species-murk}.
+
+\crunch{Exhaustion}{personality-exhausted}
+
+This requires some additional bookkeeping. If one of the facets of your Personality is \mylink{Spent}{dice-spent}, you suffer the following ill effects until you gain the appropriate \UD back:
+
+\mybullet {
+    \item If your \PRE is exhausted, your confidence ebbs: you are unable to heal Grit.
+    \item If your \TAL is exhausted, your luck has run out: if there's a choice about something bad happening, it happens to you.
+    \item If your \AWA is exhausted, you are mentally fogged: you always lose Init.
+    \item If your \CLR is exhausted, you are overcome with fear and exhaustion: you take a -4 on all \mylink{Saves}{adventurer-saves}.
+}

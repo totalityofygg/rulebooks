@@ -1,0 +1,126 @@
+\mysection{Appendix C: The Math}{appendix-c}
+
+\begin{multicols*}{2}\raggedbottom
+
+\mysubsection{Static Dice Odds}{static-dice-odds}
+
+\myital{n.b. For every +1 you add to your roll, you increase your odds by an average of 4\%}
+
+
+  \mytable{l X}{
+   \thead{Dice} & \thead{\RO Odds}  \\
+  }{  
+    d24+d24  & A little better than 2-in-3\\
+    d24+d20& A little worse than 2-in-3 \\
+    d24+d16  & Better than 50/50 \\
+    d24+d12  & A little worse than 50/50 \\
+    d24+d10  & Worse than 50/50 \\
+    d24+d8  & Better than 1-in-3\\
+    d24+d6& A little better than 1-in-3 \\
+    d24+d4  & A little worse than 1-in-3 \\
+    d24+d3  & Worse than 1-in-3 \\
+    d24+d2  & A little better than 1-in-4 \\
+    d20+d20  & Better than 50/50\\
+    d20+d16  &   A little worse than 50/50\\
+    d20+d12  &A little better than 1-in-3 \\
+    d20+d10  & A little worse than 1-in-3     \\
+    d20+d8  & A little better than 1-in-4\\
+    d20+d6& A little worse than 1-in-4 \\
+    d20+d4  & A little better than 1-in-6\\
+    d20+d3  & A little worse than 1-in-6 \\
+    d20+d2  & 1-in-8 \\
+    d16+d16  & A little better than 1-in-3\\
+    d16+d12  & A little worse than 1-in-4\\
+    d16+d10  & A little better than 1-in-6  \\
+    d16+d8  & A little better than 1-in-10 \\
+    d16+d6  & A little better than 1-in-20\\
+    d16+d4  & About 1\%\\
+    d12+d12&  1-in-10 \\
+    d12+d10  & 1-in-20  \\
+    d12+d8  & About 1\%\\
+    d10+d10  & About 1\% \\
+  }
+
+\mysubsection{Lethal Die Mean Damage}{dice-lethal-mean-damage}
+  \mytable{Y Y Y Y}{
+   \thead{Die} & \thead{Normal} & \thead{Exploding} & \thead{\% Diff} \\
+  }{ 
+    d4&2.5&3.335492&+25\% \\
+    d6&3.5&4.205907&+17\% \\
+    d8&4.5&5.137152&+12\% \\
+    d10&5.5&6.108062&+10\% \\
+  }
+
+
+\mysubsection{Mishap, Calamity, and Ruin Odds}{mishap-calamity-ruin-odds}
+  \mytable{Y Y Y Y}{
+   \thead{\# Dice} & \thead{Mishap (3)} & \thead{Calmty (4)} & \thead{Ruin (5+)}  \\
+  }{
+     3 & 1/36 & - & - \\
+     4 & 1-in-10 & \LT 1\% & - \\
+     5 & 1-in-5& 1-in-50 & \LT 1\% \\
+     6 & 2-in-6 & 1-in-20 & \LT 1\% \\
+     7 & 3-in-6 & 1-in-10 &  \LT 1\% \\
+     8 & 3-in-6 & 1-in-6 & approx. 3\% \\
+     9 & 3-in-6 & 1-in-4 & approx. 5\% \\
+     10 & 3-in-6 & 2-in-6 & approx. 8\% \\
+  }
+
+
+\mysubsection{Resource Die Averages}{dice-average-d}
+  \mytable{Y Y Y}{
+   \thead{Die} & \thead{Avg Uses} & \thead{Progression}  \\
+  }{ 
+    d3&1&1\\
+    d4&2&2\\
+    d6&5&3\\
+    d8&9&4\\
+    d10&14&5\\
+    d12&20&6\\
+    d16&28&8\\
+    d20&38&10\\
+  }
+
+
+\mysubsection{Monster Damage}{dice-monster-damage}
+
+\mytable{Y Y Y Y} {
+    \thead{Monster HD} & \thead{Mean} & \thead{Max} & \thead{Deviation} \\
+}{
+    0 & 2.5 & 4 & 1.12 \\
+    1 & 3.5 & 6 & 1.71 \\
+    2 & 4.5 & 8 & 2.29 \\
+    3 & 5.5 & 10 & 2.87 \\
+    4 & 7.0 & 12 & 2.42 \\
+    5 & 8.0 & 14 & 2.86 \\
+    6 & 9.0 & 16 & 3.24 \\
+    7 & 10.5 & 20 & 5.77 \\
+    8 & 12.0 & 22 & 4.49 \\
+    9 & 14.5 & 27 & 6.97 \\
+}
+
+
+
+\end{multicols*}
+\newpage
+\mysubsection{Attack Odds}{attack-dice-odds}
+
+    \begin{center}
+    \includegraphics[width=.9\linewidth,keepaspectratio=true]{appendices/AttackOdds}
+    \end{center}
+
+\mysubsection{Adventurer Grit (Basic)}{dice-adventurer-grit}
+
+\mytable{Y Y Y Y} {
+    \thead{Adventurer Level} & \thead{Mean} & \thead{Min} & \thead{Max} \\
+}{
+    2 & 6 & 3 & 9 \\
+    3 & 7.5 & 3 & 12 \\
+    4 & 10.5 & 3 & 18 \\
+    5 & 10.5 & 3 & 18 \\
+    6 & 10.5 & 3 & 18 \\
+    7 & 13.5 & 3 & 24 \\
+    8 & 13.5 & 3 & 24 \\
+    9 & 13.5 & 3 & 24 \\
+   \mybold{Total} & \mybold{85.5} & \mybold{24} & \mybold{147} \\
+}

@@ -1,0 +1,40 @@
+% (c) 2020 Stefan Antonowicz
+% Based off of tex found at https://github.com/ludus-leonis/nipajin
+% This file is released under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% Please do not apply other licenses one-way.
+
+\renewcommand{\yggAppendix}{%
+  \mychapter{Appendices}{appendices}
+
+    \begin{center}
+    \includegraphics[width=\linewidth,keepaspectratio=true]{appendices/ToyHeader2}
+    \end{center}
+    \newpage
+  \newpage
+
+
+}
+
+\renewcommand{\yggAppendixText}{%
+
+  \newpage
+  \input{appendices/appendix-a.tex}
+  \newpage
+  \input{appendices/appendix-b.tex}
+  \newpage
+  \input{appendices/appendix-c.tex}
+  \newpage
+  \input{appendices/appendix-d.tex}
+  \newpage
+  \input{appendices/appendix-e.tex}
+  \newpage
+  \vspace*{50mm}
+  \mysection{Appendix F: Adventurer Sheets}{appendix-f}
+  \newpage
+  \includepdf[pages=-,pagecommand={},width=\textwidth,link=true,linkname=adventurer-sheet]{pdf/ToY_Character_Sheet.pdf}
+  \newpage
+  \input{appendices/appendix-n.tex}
+  \newpage
+  \input{appendices/license.tex}
+
+} %end

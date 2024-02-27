@@ -1,0 +1,253 @@
+% (c) 2020 Stefan Antonowicz
+% Based off of tex found at https://github.com/ludus-leonis/nipajin
+% This file is released under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% Please do not apply other licenses one-way.
+
+\documentclass[a4paper,10pt]{book}
+
+\usepackage{ygg}
+\newcommand{\yggVersion}{%
+  v.2.0.0
+}
+
+\newcommand{\yggMyTitle}{
+  {The Totality of Ygg}
+}
+
+
+% Section Titles
+\newcommand{\yggIntroduction}{}
+\newcommand{\yggTotality}{}
+\newcommand{\yggGame}{}
+\newcommand{\yggAdventurer}{}
+\newcommand{\yggTropes}{}
+\newcommand{\yggSpecies}{}
+\newcommand{\yggCruces}{}
+\newcommand{\yggArcana}{}
+\newcommand{\yggVulgate}{}
+\newcommand{\yggRemembrance}{}
+\newcommand{\yggCombat}{}
+\newcommand{\yggMovement}{}
+\newcommand{\yggCivilization}{}
+\newcommand{\yggAdvancement}{}
+\newcommand{\yggGear}{}
+\newcommand{\yggResearch}{}
+\newcommand{\yggCunning}{}
+\newcommand{\yggFaith}{}
+\newcommand{\yggWonders}{}
+\newcommand{\yggMonsters}{}
+\newcommand{\yggArbiter}{}
+\newcommand{\yggAppendix}{}
+
+% Body
+\newcommand{\yggIntroductionText}{}
+\newcommand{\yggTotalityText}{}
+\newcommand{\yggGameText}{}
+\newcommand{\yggAdventurerText}{}
+\newcommand{\yggTropesText}{}
+\newcommand{\yggSpeciesText}{}
+\newcommand{\yggCrucesText}{}
+\newcommand{\yggArcanaText}{}
+\newcommand{\yggVulgateText}{}
+\newcommand{\yggRemembranceText}{}
+\newcommand{\yggCombatText}{}
+\newcommand{\yggMovementText}{}
+\newcommand{\yggCivilizationText}{}
+\newcommand{\yggAdvancementText}{}
+\newcommand{\yggGearText}{}
+\newcommand{\yggResearchText}{}
+\newcommand{\yggCunningText}{}
+\newcommand{\yggFaithText}{}
+\newcommand{\yggWondersText}{}
+\newcommand{\yggMonstersText}{}
+\newcommand{\yggArbiterText}{}
+\newcommand{\yggAppendixText}{}
+
+
+\input{introduction.tex}
+\input{totality.tex}
+\input{game.tex}
+\input{adventurer.tex}
+\input{tropes.tex}
+\input{species.tex}
+\input{cruces.tex}
+\input{arcana.tex}
+\input{vulgate.tex}
+\input{remembrance.tex}
+\input{combat.tex}
+\input{movement.tex}
+\input{civilization.tex}
+\input{gear.tex}
+\input{research.tex}
+\input{cunning.tex}
+\input{wonders.tex}
+\input{advancement.tex}
+\input{monsters.tex}
+\input{arbiter.tex}
+\input{appendices.tex}
+
+% ###########################################################################
+% ###########################################################################
+% ###########################################################################
+% ###########################################################################
+% ###########################################################################
+
+\begin{document}\fftext
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\frenchspacing
+
+
+% --- front cover --------------------------------------------------------------------
+
+\pagenumbering{gobble}
+\includepdf[pages=-]{pdf/FrontCover.pdf}
+\pagenumbering{gobble}
+\includepdf[pages=-]{pdf/TitlePage.pdf}
+
+% --- introduction  -----------------------------------------------------------------
+% added introduction to TitlePage.pdf
+%\noindent\yggIntroduction
+%\vfill\newpage\raggedbottom
+%\raggedcolumns
+%\noindent\yggIntroductionText
+%\vfill\newpage
+
+% --- table of contents  -----------------------------------------------------------------
+\input{toc.tex}
+% --- the totality -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggTotality
+\noindent\yggTotalityText
+\vfill\newpage
+% --- core mechanics -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggGame
+\begin{multicols*}{2}\raggedcolumns
+  \noindent\yggGameText
+\end{multicols*}
+\vfill\newpage
+% --- the adventurer -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggAdventurer
+\begin{multicols*}{2}\raggedcolumns
+\noindent\yggAdventurerText
+\end{multicols*}
+\vfill\newpage
+% --- tropes -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggTropes
+\noindent\yggTropesText
+\vfill\newpage
+% --- species -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggSpecies
+\noindent\yggSpeciesText
+\vfill\newpage
+% --- cruces -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggCruces
+\begin{multicols*}{2}\raggedcolumns
+  \noindent\yggCrucesText
+\end{multicols*}
+\vfill\newpage
+% --- arcana -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggArcana
+\begin{multicols*}{2}\raggedcolumns
+  \noindent\yggArcanaText
+\end{multicols*}
+\vfill\newpage
+% --- vulgate -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggVulgate
+\begin{multicols*}{2}\raggedcolumns
+  \noindent\yggVulgateText
+\end{multicols*}
+\vfill\newpage
+% --- remembrance -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggRemembrance
+\begin{multicols*}{2}\raggedcolumns
+  \noindent\yggRemembranceText
+\end{multicols*}
+\vfill\newpage
+% --- combat -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggCombat
+\begin{multicols*}{2}\raggedcolumns
+  \noindent\yggCombatText
+\end{multicols*}
+\vfill\newpage
+% --- movement -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggMovement
+\begin{multicols*}{2}\raggedcolumns
+  \noindent\yggMovementText
+\end{multicols*}
+\vfill\newpage
+% --- civilization -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggCivilization
+\begin{multicols*}{2}\raggedcolumns
+  \noindent\yggCivilizationText
+\end{multicols*}
+\vfill\newpage
+% --- gear -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggGear
+\begin{multicols*}{2}\raggedcolumns
+  \noindent\yggGearText
+\end{multicols*}
+\vfill\newpage
+% --- research -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggResearch
+\begin{multicols*}{2}\raggedcolumns
+  \noindent\yggResearchText
+\end{multicols*}
+\vfill\newpage
+% --- cunning -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggCunning
+\begin{multicols*}{2}\raggedcolumns
+  \noindent\yggCunningText
+\end{multicols*}
+\vfill\newpage
+% --- wonders -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggWonders
+\begin{multicols*}{2}\raggedcolumns
+  \noindent\yggWondersText
+\end{multicols*}
+\vfill\newpage
+% --- advancement -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggAdvancement
+\begin{multicols*}{2}\raggedcolumns
+  \noindent\yggAdvancementText
+\end{multicols*}
+\vfill\newpage
+% --- monsters  -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggMonsters
+\begin{multicols*}{2}\raggedcolumns
+  \noindent\yggMonstersText
+\end{multicols*}
+\vfill\newpage
+% --- arbiter's resources  -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggArbiter
+\noindent\yggArbiterText
+\vfill\newpage
+% --- appendices -----------------------------------------------------------------
+\setcounter{footnote}{0} 
+\noindent\yggAppendix
+\noindent\yggAppendixText
+\vfill\newpage
+% --- back cover --------------------------------------------------------------------
+\pagecolor{toyblk}
+\thispagestyle{empty}
+\ThisCenterWallPaper{1}{BackCover.png}
+\begin{tikzpicture}
+\end{tikzpicture}
+\end{document}

@@ -1,0 +1,28 @@
+% (c) 2020 Stefan Antonowicz
+% Based off of tex found at https://github.com/ludus-leonis/nipajin
+% This file is released under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% Please do not apply other licenses one-way.
+
+\renewcommand{\yggGame}{%
+    \mychapter{The Game}{the-game}
+    \begin{center}
+    \includegraphics[width=\linewidth,keepaspectratio=true]{game/TheGame}
+    \end{center}
+    \newpage
+    \newpage
+}
+
+\renewcommand{\yggGameText}{%
+  \raggedbottom
+  \input{game/roles.tex}
+  \newpage
+  \input{game/dice.tex}
+  \newpage
+  \input{game/time.tex}
+  \newpage
+  \input{game/distance.tex}
+  \newpage
+  \input{game/meta.tex}
+  \newpage
+  \input{game/effects.tex}
+} %end

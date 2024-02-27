@@ -1,0 +1,83 @@
+    \newpage
+
+    \mysection{Leechcraft}{arcana-leechcraft}
+
+  \callout {
+    Leechcraft uses your \mylink{Ingenuity}{cruces-knowledge-ingenuity}. Unless otherwise noted, Leechcraft takes 2 Actions to perform. You and your patient \mybold{cannot move} while you are applying your medicines.  Leechcraft requires both hands free, but does not require speech. Leechcraft can be performed both on yourself or an Ally (unless indicated otherwise).
+}
+
+
+  \LEECHCRAFT[
+    Name=Bedevil Toxin,
+    Link=leechcraft-bedevil-toxin
+  ]
+
+  Try your \INGENUITY once for a Noxious (d6) Toxin; twice for a Deadly (d10) Toxin; or three times for a Lethal (d16) Toxin. If you don't roll \mybold{any} Failures, you may immediately end a Toxin's effect on your patient. 
+
+
+  \LEECHCRAFT[
+    Name=Bonesetting,
+    Link=leechcraft-bonesetting
+  ]
+
+  Try your \INGENUITY. If you don't roll a Failure, you may purge a single, non-permanent \mylink{Wound}{physical-wound} (but not a \mylink{Beating}{physical-wound-beating}). Permanent wounds (like missing teeth) can't be fixed with Bonesetting. This Leechcraft can only be performed during a \mylink{Bivouac}{combat-resting-bivouac}.
+
+  \LEECHCRAFT[
+    Name=Examination,
+    Link=leechcraft-examination
+  ]
+
+    Try your \INGENUITY. If you don't roll a Failure, you understand one physical ailment of your patient. This can include: how much health they have left, what disease they're affected by, how many minutes they have left of suffering from a Toxin, and any other physical disorder at the Arbiter's discretion. You must try your \INGENUITY multiple times if you wish to discover more than one ailment. The patient must have an anatomy you roughly understand (again at the Arbiter's discretion).
+
+\cbreak
+
+  \LEECHCRAFT [
+    Name=Pharmaceuticals,
+    Link=leechcraft-pharmaceuticals
+  ]
+
+  Try your \INGENUITY. If you don't roll a Failure, you may purge \mybold{one} of the following effects from an Ally (but not yourself):
+
+\colorcallout{toyeerieblack}{
+    \mybullet {
+        \item \myital{Adrenal Extract:} \mylink{Stunned}{effect-stunned}
+        \item \myital{Blacktoe:} \mylink{Woozy}{effect-woozy}
+        \item \myital{Gingeroot:} \mylink{Sickened}{effect-sickened}
+        \item \myital{Hair of the Dog:} \mylink{Hung Over}{effect-hung-over}
+        \item \myital{Smelling Salts:} \mylink{The Vapors}{effect-the-vapors}
+        \item \myital{Trepanation:} \mylink{Concussed}{effect-concussed}
+        \item \myital{Woundseal:} \mylink{Bleeding}{effect-bleeding}
+    }
+}
+
+  \LEECHCRAFT[
+    Name=Quarantine,
+    Link=leechcraft-quarantine
+  ]
+  
+  Try your \INGENUITY. If you don't roll a Failure, you prevent a person affected by a \mylink{Disease}{vulgate-medicine-diseases} from being contagious for the rest of the Session. Curing the Disease requires \mylink{Medicine}{vulgate-medicine}.
+
+  \LEECHCRAFT[
+    Name=Sew Wounds,
+    Link=leechcraft-sew-wounds
+  ]
+
+  Try your \INGENUITY and heal \SUMDICE Flesh on an Ally (but not yourself) up to their \MAX. This Leechcraft can only be performed during a \mylink{Bivouac}{combat-resting-bivouac}.
+
+  \LEECHCRAFT[
+    Name=Stitch,
+    Link=leechcraft-stitch
+  ]
+   
+  Try your \INGENUITY on someone who is \mylink{Dying}{combat-dying} (at 0 Flesh). This includes yourself. If you roll a Failure, the patient must immediately make a \DEATH try. Otherwise, they heal 1 point of Flesh (and must immediately make an \INSANITY and \INJURY try). 
+
+\myimage{arcana/PlagueDoctor}
+
+\cbreak
+
+  \LEECHCRAFT[
+    Name=Transfusion,
+    Link=leechcraft-transfusion
+  ]
+
+  Try your \INGENUITY to transfer the blood from one creature to another, including yourself. Both creatures must be alive, in close proximity, and generally immobile during the transfusion. Each Moment, the "donor" loses 1 point of Flesh (or Health), and the "recipient" gains 1 point of Flesh (or Health) up to their \MAX. The Arbiter is under no obligation to tell you how much blood is left in the donor. If the donor is brought to 0 Flesh (or Health) during the transfusion, the recipient must \SAVE{Doom} or fall to 0 Flesh, prompting a roll of their \DEATH. This Leechcraft can only be performed during a \mylink{Bivouac}{combat-resting-bivouac}. 

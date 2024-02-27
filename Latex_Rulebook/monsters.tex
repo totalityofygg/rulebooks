@@ -1,0 +1,180 @@
+% (c) 2020 Stefan Antonowicz
+% Based off of tex found at https://github.com/ludus-leonis/nipajin
+% This file is released under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% Please do not apply other licenses one-way.
+
+\renewcommand{\yggMonsters}{%
+  \mychapter{The Monsters}{monsters}
+    \begin{center}
+    \includegraphics[width=\linewidth,keepaspectratio=true]{monsters/MonstersHeader}
+    \end{center}
+    \newpage
+}
+
+\renewcommand{\yggMonstersText}{%
+
+Lurking in crypts, creeping across the moors, hiding in ruins, populating sewers - \mylink{Monsters}{roles-monster} threaten danger and death to unwary Adventurers.  The role of the Monster falls to the \mylink{The Arbiter}{roles-arbiter} to play.
+
+\ed {
+    Generally speaking, the Arbiter does little rolling for Monsters; Init, Fighting, and Guarding against their attacks falls to the Adventurer. The goal here is to give the Arbiter space to narrate what's happening in combat instead of getting bogged down with rolling dice and consulting lots of charts. 
+
+}
+
+
+
+    \myimage{monsters/Water_2}
+
+
+    \mysubsection{Reading the Monster Block}{monster-block}
+
+
+    \MONSTER[]
+
+
+\mysubsection{Base Monster Stats}{monster-basic-stats}
+
+\mytable{Y Y Y Y Y}{
+    \thead{\small{{\color{toyblu}HIT}}} & \thead{\small{Damage}} & \thead{\small{Weak.}} & \thead{\small{Save}} & \thead{\small{Spells\Dagger}} \\ 
+}{
+    0\Asterisk & d4 & d24 & 12 & 0 \\
+    1 & d6 & d24 & 11 & d4 \\
+    2 & d8 & d20 & 10 & 2d4 \\
+    3 & d10 & d20 & 9 & 3d4 \\
+    4 & 2d6 & d16 & 8 & 3d4 \\
+    5 & d6+d8 & d16 & 7 & 4d4 \\
+    6 & 2d8 & d12 & 6 & 4d4 \\
+    7 & d20 & d10 & 5 & 5d4 \\
+    8 & d10+d12 & d8 & 4 & 5d4 \\
+    9 & d24+d3 & d4 & 3 & 6d4 \\
+}
+
+\footnotesize 
+\Asterisk The Monster has 1 Health 
+
+\Dagger Magic using Monsters only
+\normalsize
+
+\mysubsection{Hit Dice}{monster-hit-dice}
+
+\HD correspond to Adventurer Levels: a 1 \HD monster should be a match for a Level 1 Adventurer.  The higher the \HD, the greater the damage, saves, and spell dice - and the lower the Weakness.
+
+\mysubsection{Damage}{monster-damage}
+
+The die to roll to determine how much damage is inflicted on an Adventurer who has missed their \mylink{Guarding}{combat-guarding} try. Monsters can neither Crit nor Fumble.
+
+\mysubsection{Weakness (WK)}{monster-weakness}
+
+When an Adventurer makes an \mylink{Attack}{combat-attack} try, they must \RO the Monster's Weakness along with their Weapon Trait, and add their \LVL. 
+
+Similarly, when an Adventurer makes a \mylink{Guarding}{combat-guarding} try, they must \RO the Monster's Weakness along with their \DEX, and add their \LVL.
+
+\mysubsection{Saves}{monster-saves}
+
+There is only one Save for a Monster that covers Hexes, Toxins, and Doom. Roll 2d6 for a Save try. If the number is greater than or equal to the Save, the Monster is successful. 
+ 
+\mysubsection{Spell Dice}{monster-spell-dice}
+
+Some Monsters are able to invoke Arcana-like effects. The number of Spell Dice indicate the number of d4 a Monster may use to perform their magic. Additional information can be found in the \mylink{Spells}{monster-spells} section below.
+
+\mysubsection{Health (Hlth)}{monster-health}
+
+Health indicates the amount of damage the Monster can take before it dies. Health is a function of \mylink{Hit Dice}{monster-hit-dice} times \mylink{Power}{monster-power}: Weak creatures have 3 Health per \HD; Average creatures have 5 Health per \HD; and Strong creatures have 7 Health per \HD. 
+
+\mysubsection{Speed (SPD)}{monster-speed}
+
+When an Adventurer tries \mylink{Init}{combat-init}, they must \RO using the Monster's Speed along with their \INT and \MD.
+
+Monster Speed also indicates which die to roll in a \RB{\DEX} contest.
+
+\mytable{l X X X}{
+    \thead{} & \thead{Slow} & \thead{Base} & \thead{Fast}  \\
+}{
+    Speed & d20 & d16 & d12 \\
+    \DEX & d6 & d8 & d10 \\
+}
+
+\mysubsection{Power}{monster-power}
+
+Power measures how many points of Health a Monster has per \HD, and which die to roll if a \VIG \RB is required:
+
+\mytable{l X X X}{
+    \thead{} & \thead{Weak} & \thead{Average} & \thead{Strong}  \\
+}{
+    Health & 3 per HIT & 5 per HIT & 7 per HIT \\
+    \VIG & d6 & d8 & d10 \\
+}
+
+\mysubsection{Attack (ATK)}{monster-attack}
+
+Attack indicates the number of targets a Monster can attack ("1 Close" or "6 Nearby", for instance). Attacks against multiple targets are listed as one of three types, listed in the Monster's description:
+
+\mybullet {
+    \item \mybold{Combined} means that the multiple attacks can only target a \mybold{single} Adventurer i.e. the Adventurer will have to roll their Guard multiple times to avoid getting hurt.
+    \item \mybold{Distinct} means that the multiple attacks can only target \mybold{multiple} Adventurers i.e. each Adventurer only has to roll their Guard once.
+    \item \mybold{Either} means that the multiple attacks can either be Combined or Distinct, at your discretion.
+}
+
+
+\mysubsection{Soak}{monster-soak}
+
+Soak is a Monster's \mylink{Armor}{gear-armor}, representing thick scales, tough or rubbery bodies, etc.  Like Armor, the Soak die is rolled whenever \mybold{physical} damage is taken, and the damage is reduced by that amount. A roll of 1 or 2 on the Soak die means the die moves \DCDOWN (just like Armor). Certain Monsters may only have Soak against specific types of weapons (for example, Skeletons have d4 Soak vs. Stabbing damage).  \mylink{Murder}{vulgate-whispers-murder} bypasses Soak. Most Monsters have a Soak of 0.
+
+  \mytable{l X}{
+    \thead{Soak} & \thead{Examples}  \\
+  }{
+    d4 & Armored troops, Skeletons, etc. \\
+    d6 & Knights, Giant Beetles, etc. \\
+    d8 & Automatons, Powerful Demons etc. \\
+    d10 & Dragons, Titans, etc.   \\
+  }
+
+\end{multicols*}
+\newpage
+
+\myimage{monsters/MonsterCreation}
+
+\begin{multicols*}{2}
+   \mysubsection{Morale}{monster-morale}
+
+Morale measures the likelihood of a Monster running away when things go against them.  Roll 2d6 for a Morale try. If the number is greater than or equal to the basic roll, the Monster attempt to flee or surrender. If a Monster turns tail and runs, any Adventurer Close to it may attempt an Attack try \myital{before} the Monster moves to the next range hex, provided they still have Actions left this Moment.
+
+\mysubsection{Traits and Actions}{monster-traits-and-actions}
+
+Monster \mylink{Monster Traits}{monster-traits} and \mylink{Innate Abilities}{monster-innate} are dealt with in the appropriate section below.
+
+
+\cbreak
+
+Monsters are Cowardly, Orderly, or Fanatical:
+
+
+
+\callout{\footnotesize{
+\mybullet {
+  \item \mybold{Cowardly} Basic roll is 4.  If the Monsters are in a group, roll a) when the first Monster dies (but only if the Monsters are outnumbered; b) when half the Monsters are down; or c) whenever a "leader" dies.  If the Monster is by itself, roll a) when it first takes damage and b) when it's at half Health or less.
+
+  \item \mybold{Orderly} Basic roll is 8.  If the Monsters are in a group, roll a) when half the Monsters are down; or b) if \mybold{all}  the leaders are dead.  If the Monster is by itself, roll when it's at half Health or less.
+
+  \item \mybold{Fanatical}  Basic roll is 12.  If the Monsters are in a group, roll when half the Monsters are down AND all the leaders are dead.  If the Monster is by itself, it will automatically pass a morale check.
+}}}
+
+
+
+
+
+
+
+\newpage
+
+  \input{monsters/spells.tex}
+  \newpage
+  \input{monsters/orders.tex}
+  \newpage
+  \input{monsters/traits.tex}
+  \newpage
+  \input{monsters/combat.tex}
+  \newpage\raggedbottom
+  \input{monsters/bestiary.tex}
+  \newpage
+
+}

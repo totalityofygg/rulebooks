@@ -1,0 +1,1073 @@
+% (c) 2020 Stefan Antonowicz
+% Based off of tex found at https://github.com/ludus-leonis/nipajin
+% This file is released under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% Please do not apply other licenses one-way.
+
+\ProvidesFile{ygg.sty}
+\ProvidesPackage{ygg}
+
+% --- common packages --------------------------------------------------
+\usepackage[cmyk,table,dvipsnames]{xcolor} % load early to avoid name clash
+\usepackage{verbatim}  %\begin{comment} support
+\usepackage{eso-pic}   % AddToShipoutPicture support
+\usepackage{units}   % nice fractions (like "1/2")
+\usepackage{multicol}  % 2-columns
+\usepackage{keycommand} % pass keys and values
+\usepackage{eqparbox} % make equal length boxes
+\usepackage{xspace} % don't insert spaces after punctuation
+\usepackage{ifthen} % if then statements
+\usepackage[pagecolor=white]{pagecolor}
+\usepackage{pdfpages}
+\usepackage{enumitem,amssymb}
+%\usepackage{layouts}
+%textwidth in cm: \printinunitsof{cm}\prntlen{\textwidth}
+
+
+
+% --- ToY Color Pallette -----------------------------------------------------------
+\DefineNamedColor{named}{toypurpleplum}{cmyk}{0.139,0.530,0,0.298}
+\DefineNamedColor{named}{toyvividred}{cmyk}{0,0.930,0.914,0.035}
+\DefineNamedColor{named}{toyeerieblack}{cmyk}{0,0,0,0.894}
+\DefineNamedColor{named}{toyblu}{cmyk}{0.97,0.33,0.00,0.64} 
+\DefineNamedColor{named}{toyblk}{cmyk}{0.75,0.68,0.67,0.90} % blacker than black
+\DefineNamedColor{named}{toygold}{cmyk}{0,0.16,1.00,0}
+\definecolor{pitchblack}{cmyk}{0,0,0,1}
+
+% --- graphics packages -----------------------------------------------------------
+\usepackage{graphicx}
+\usepackage{float}
+\graphicspath{ {./images/} }
+\usepackage{wrapfig}
+\usepackage{cuted}
+\usepackage{wallpaper}
+\usepackage{tikz}
+\usepackage{fancybox}
+
+% --- font packages -----------------------------------------------------------
+\usepackage[fixed]{fontawesome5}
+\usepackage{soul}
+
+% --- table of contents -----------------------------------------------------------
+\usepackage{tocloft}
+\usepackage[toc]{multitoc}
+\usepackage[nottoc]{tocbibind}
+
+% --- page & basic text setup ------------------------------------------
+\usepackage[driver=none]{geometry}
+\usepackage{afterpage}
+
+% create a blank page
+\newcommand\blankpage{%
+    \null
+    \thispagestyle{empty}%
+    \addtocounter{page}{-1}%
+    \pagecolor{white}
+    \newpage
+}
+
+\geometry{% Letter
+  paperheight=11in,
+  paperwidth=8.5in,
+  margin=1in
+}
+% More space between columns
+\setlength{\columnsep}{3em}
+
+% Column macro
+\newcommand{\cbreak} {
+  \vfill\null
+  \columnbreak
+} 
+
+% Let footnotes be referenced more than once
+\newcommand\footnoteref[1]{
+    \protected@xdef\@thefnmark{
+        \ref{#1}
+    }\@footnotemark
+}
+
+% Footnotes same font as main layout
+% https://tex.stackexchange.com/questions/4779/how-to-change-font-family-in-footnote
+\usepackage[bottom]{footmisc}
+\renewcommand*{\footnotelayout}{\footnotesize\fftext}
+
+% Don't indent paragraphs, add some space instead
+\setlength{\parindent}{0em}
+\setlength{\parskip}{3mm}
+
+
+% --- header and footer ------------------------------------------------
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfootoffset[RO,L]{0mm}
+\fancyfoot[C]{\color{toyblk}\fftext\thepage}
+\renewcommand{\headrulewidth}{.25pt}
+\renewcommand{\footrulewidth}{.25pt}
+
+% --- pdf tweaks -------------------------------------------------------
+
+% fix a transparent png rendering bug
+\AddToShipoutPicture{%
+\makeatletter%
+\special{pdf: put @thispage <</Group << /S /Transparency /I true /CS /DeviceRGB>> >>}%
+\makeatother%
+}
+
+\usepackage{ocgx} % for pdf layer support
+
+% --- fonts & symbols --------------------------------------------------
+
+\usepackage{fontspec}
+\ifdefined\fontsearchpath\else\newcommand{\fontsearchpath}{fonts}\fi
+
+% Latex word
+\DeclareRobustCommand{\LaTeX}{%
+  L\kern-.36em%
+  {\sbox\z@ T%
+    \vbox to\ht\z@{\hbox{%
+      \check@mathfonts
+      \fontsize\sf@size\z@
+      \math@fontsfalse\selectfont A}%
+    \vss}%
+  }%
+  \kern-.15em%
+  \TeX\ }
+
+
+% Various Symbols (ffstixmath)
+\newfontfamily{\ffstixmath}[
+  Path=\fontsearchpath/stix/,
+  Mapping=tex-text,
+  Extension={.otf},
+  UprightFont={STIX2Math},
+  BoldFont={STIX2Math},
+  ItalicFont={STIX2Math},
+  BoldItalicFont={STIX2Math} 
+]{STIX2Math}
+
+% Small Caps Florence
+\newfontfamily{\florence}[
+  Path=\fontsearchpath/florencesans/,
+  Mapping=tex-text,
+  UprightFont={Florsn35},
+  BoldFont={Florsn35},
+  ItalicFont={Florsn36},
+  BoldItalicFont={Florsn36}
+]{Florence}
+
+% Main font 
+\newfontfamily{\fftext}[
+  Path=\fontsearchpath/jackwrite/,
+  Mapping=tex-text,
+  UprightFont={Jackwrite},
+  BoldFont={JackwriteBold},
+  ItalicFont={JackwriteBold},
+  BoldItalicFont={JackwriteBold}
+]{Jackwrite}
+
+%Darken the lmtt font for unicode
+\newfontfamily\darktt[
+    AutoFakeBold=5
+]{Latin Modern Mono}
+
+
+
+% --- symbol macros --------------------------------------------------
+\usepackage[T1]{fontenc}
+\usepackage{pifont}
+\usepackage{zlmtt}
+
+% Fix for highlighting from https://tex.stackexchange.com/questions/48501/soul-broken-highlighting-with-xcolor-when-using-selectcolormodel
+\makeatletter
+\patchcmd{\SOUL@ulunderline}{\dimen@}{\SOUL@dimen}{}{}
+\patchcmd{\SOUL@ulunderline}{\dimen@}{\SOUL@dimen}{}{}
+\patchcmd{\SOUL@ulunderline}{\dimen@}{\SOUL@dimen}{}{}
+\newdimen\SOUL@dimen
+\makeatother
+\sethlcolor{toygold!50!white}
+
+% Unicode characters JackWrite doesn't have ...
+\newcommand{\UmlautA}{{\darktt ä}}
+\newcommand{\UmlautE}{{\darktt ë}}
+\newcommand{\UmlautI}{{\darktt ï}}
+\newcommand{\UmlautO}{{\darktt ö}}
+\newcommand{\UmlautOCap}{{\darktt Ö}}
+\newcommand{\UmlautU}{{\darktt ü}}
+\newcommand{\UmlautY}{{\darktt ÿ}}
+\newcommand{\AccentA}{{\darktt á}}
+\newcommand{\AccentI}{{\darktt í}}
+\newcommand{\AccentE}{{\darktt é}}
+\newcommand{\AccentECap}{{\darktt É}}
+\newcommand{\AccentO}{{\darktt ó}}
+\newcommand{\AccentU}{{\darktt ú}}
+\newcommand{\ARing}{{\darktt å}}
+\newcommand{\TildeN}{{\darktt ñ}}
+\newcommand{\CircumflexA}{{\darktt â}}
+\newcommand{\CircumflexE}{{\darktt ê}}
+\newcommand{\Asterisk}{{\fontfamily{lmtt}\selectfont $\textsuperscript{*}$}}%
+\newcommand{\Dagger}{{\fontfamily{lmtt}\selectfont $\textsuperscript{†}$}}%
+\newcommand{\OneHalf}{{\fontfamily{lmtt}\fontseries{b}\selectfont \bfseries{½}}\xspace}%
+\newcommand{\Equals}{{\fontfamily{lmtt}\selectfont =}\xspace}%
+\newcommand{\LT}{{\fontfamily{lmtt}\selectfont <}}%
+\newcommand{\GT}{{\fontfamily{lmtt}\selectfont >}}%
+
+% Names substituted with LMTT to make life a little easier
+\newcommand{\ManaYoodSushai}{{\darktt {M\={a}na-Yood-Sush\={a}\={i}}}\xspace}%
+\newcommand{\TheAuthority}{{\florence\textcolor{toypurpleplum}{\textbf{\small{the dreamer}}}}\xspace}%
+\newcommand{\Matarta}{Ma{\darktt ṭ}arta\xspace}%
+\newcommand{\Murk}{Myrk{\UmlautA}lfar\xspace}%
+\newcommand{\AelfAdal}{{\darktt Æ}lf-Adal\xspace}%
+
+% --- glyphs --------------------------------------------------
+
+%dice
+\newcommand{\diceglyph}{{\color{toyblu}\faDice}}
+
+
+%dice types - ovalbox treatment
+\newcommand{\DCUP}{\ovalbox{\footnotesize{\faAngleDoubleUp\faDice}}\xspace}%
+\newcommand{\DCDOWN}{\ovalbox{\footnotesize{\faAngleDoubleDown\faDice}}\xspace}%
+\newcommand{\DEATH}{\ovalbox{\footnotesize{\faSkullCrossbones\faDice}}\xspace}%
+\newcommand{\Duration}{\ovalbox{\footnotesize{\faClock[regular]\faDice}}\xspace}%
+\newcommand{\DUR}[1]{\ovalbox{\footnotesize{\faClock[regular]\fftext{#1}}}\xspace}%
+\newcommand{\INJURY}{\ovalbox{\footnotesize{\faUserInjured\faDice}}\xspace}%
+\newcommand{\INSANITY}{\ovalbox{\footnotesize{\faFlushed[regular]\faDice}}\xspace}%
+\newcommand{\POOL}{\ovalbox{\footnotesize{\faBolt\faDice}}\xspace}%
+\newcommand{\POOLD}[1]{\ovalbox{\footnotesize{\faBolt\fftext{#1}}}\xspace}%
+\newcommand{\RB}{\ovalbox{\footnotesize{\faDiceD20\ffstixmath{\char"29C1}}}\xspace}%
+\newcommand{\RBONE}[1]{\ovalbox{\footnotesize{\faDiceD20\ffstixmath{\char"29C1}}: #1}\xspace}%
+\newcommand{\RBTRY}[2]{\ovalbox{\footnotesize{\faDiceD20\ffstixmath{\char"29C1}}: #1 / #2}\xspace}%
+\newcommand{\RS}{\ovalbox{\footnotesize{\faDiceD20\ffstixmath{\char"2713}}}\xspace}%
+\newcommand{\RSTRY}[1]{\ovalbox{\footnotesize{\faDiceD20\ffstixmath{\char"2713}}:#1}\xspace}%
+\newcommand{\RO}{\ovalbox{\footnotesize{\faDiceD20\ffstixmath{\char"2473}}}\xspace}%
+\newcommand{\ROTRY}[1]{\ovalbox{\footnotesize{\faDiceD20\ffstixmath{\char"2473}}:#1}\xspace}%
+\newcommand{\SAVE}[1]{\ovalbox{\footnotesize{\faDice Save vs. #1}}\xspace}%
+\newcommand{\UD}{\ovalbox{\footnotesize{\faWrench\faDice}}\xspace}%
+\newcommand{\UDD}[1]{\ovalbox{\footnotesize{\faWrench#1}}\xspace}%
+
+%dice types - text treatment
+\newcommand{\INGENUITY}{{\footnotesize{\diceglyph:\florence{\color{toyblu}{ingenuity}}}}\xspace}%
+\newcommand{\KNAVE}{{\footnotesize{\diceglyph:\florence{\color{toyblu}{whisper}}}}\xspace}%
+\newcommand{\LUCK}{{\footnotesize{\diceglyph:\florence{\color{toyblu}{luck}}}}\xspace}%
+\newcommand{\JUJU}{{\footnotesize{\diceglyph:\florence{\color{toyblu}{juju}}}}\xspace}%
+\newcommand{\SUM}{{\footnotesize{\florence{\color{toyvividred}{[sum]}}}}\xspace}%
+\newcommand{\SUMDICE}{{\footnotesize{\florence{\color{toyvividred}{[sum]}}}}\xspace}%
+\newcommand{\MAX}{{\footnotesize{\florence{\color{toyvividred}{[max]}}}}\xspace}%
+\newcommand{\VIG}{{\footnotesize{\florence{\color{toyblu}{[vig]}}}}\xspace}%
+\newcommand{\DEX}{{\footnotesize{\florence{\color{toyblu}{[dex]}}}}\xspace}%
+\newcommand{\INT}{{\footnotesize{\florence{\color{toyblu}{[int]}}}}\xspace}%
+\newcommand{\FOC}{{\footnotesize{\florence{\color{toyblu}{[foc]}}}}\xspace}%
+\newcommand{\PRE}{{\footnotesize{\florence{\color{toyblu}{[pre]}}}}\xspace}%
+\newcommand{\TAL}{{\footnotesize{\florence{\color{toyblu}{[tal]}}}}\xspace}%
+\newcommand{\AWA}{{\footnotesize{\florence{\color{toyblu}{[awa]}}}}\xspace}%
+\newcommand{\CLR}{{\footnotesize{\florence{\color{toyblu}{[clr]}}}}\xspace}%
+
+\newcommand{\MD}{{\footnotesize{\diceglyph:\florence{\color{toyblu}{[mov]}}}}\xspace}%
+\newcommand{\HD}{{\footnotesize{\diceglyph:\florence{\color{toyblu}{[hit]}}}}\xspace}%
+\newcommand{\DICE}{{\footnotesize{\diceglyph:\florence{{[dice]}}}}\xspace}%
+\newcommand{\ROLL}{{\footnotesize{\florence{\color{toyvividred}{[rolls]}}}}\xspace}%
+\newcommand{\CUR}{{\footnotesize{\florence{\color{toyvividred}{[cur]}}}}\xspace}%
+\newcommand{\LVL}{{\footnotesize{\florence{\color{toyvividred}{[lvl]}}}}\xspace}%
+\newcommand{\NUM}{{\footnotesize{\florence{\color{toyvividred}{[num]}}}}\xspace}%
+\newcommand{\FE}{{\footnotesize{\bfseries{\color{toyeerieblack}{irn.}}}}\xspace}%
+\newcommand{\AG}{{\footnotesize{\bfseries{\color{toyeerieblack}{sil.}}}}\xspace}%
+\newcommand{\AU}{{\footnotesize{\bfseries{\color{toyeerieblack}{gol.}}}}\xspace}%
+
+% dice
+\newcommand{\PLUS}{{\florence{\textbf{\ffstixmath{\char"002B}}}}\xspace}%
+% coin
+\newcommand{\coinglyph}{\faPiggyBank}
+% length
+\newcommand{\lengthglyph}{\faStopwatch}
+%mod
+\newcommand{\moddiceglyph}{\faArrowsAltV}
+
+%Dice Types
+\newcommand{\DEED}{\diceglyph\florence\color{toyblu}\textbf{\small{deed}}\fftext\color{toyblk}\xspace}%
+\newcommand{\FLESH}{\diceglyph\florence\color{toyblu}\textbf{\small{vitality}}\fftext\color{toyblk}\xspace}%
+%Magic
+\newcommand{\MOD}{\fftext \textbf{\moddiceglyph}\xspace}
+\newcommand{\LENGTH}{\fftext \textbf{\lengthglyph}\xspace}
+\newcommand{\COST}{\fftext \textbf{\coinglyph}\xspace}
+\newcommand{\SUCCESS}{\fftext \textbf{\successglyph}\xspace}
+\newcommand{\DubArrw}{{\fftext \textbf{\ffstixmath{\char"21D4}}}\xspace}
+\newcommand{\Tilde}{{\fftext \textbf{\ffstixmath{\char"223C}}\xspace}}
+\newcommand{\TheEnd}{{\florence \textbf{THE END}}\xspace}%
+
+% --- section headers --------------------------------------------------
+\usepackage{titlesec}
+
+% Vertical center title page
+\usepackage{titling}
+\renewcommand\maketitlehooka{\null\mbox{}\vfill}
+\renewcommand\maketitlehookd{\vfill\null}
+
+% hide the section numbers
+\renewcommand\thesection{}
+\renewcommand\thesubsection{}
+\renewcommand\thesubsubsection{}
+
+%skip a line
+\newcommand{\myskip}{\vspace{\baselineskip}}
+
+
+%sections and links
+\titleformat*{\section}{\color{toyvividred}\Huge\bfseries\fftext\filcenter}
+\titleformat*{\subsection}{\color{toyvividred}\huge\bfseries\fftext\filcenter}
+\titleformat*{\subsubsection}{\color{toyblu}\Large\bfseries\fftext\filcenter}
+\titleformat*{\paragraph}{\large\bfseries\raggedright\fftext}
+\newcommand{\mysectionheader}[1]{\AddToShipoutPictureBG*{\AtTextLowerLeft{\centerline {\includegraphics[width=\linewidth,height=.9\textheight,keepaspectratio=true]{#1}}}}}%
+
+\newcommand{\mychapter}[2]{\hypertarget{#2}{\section{#1}\zlabel{#2}}}%
+\newcommand{\mysection}[2]{\hypertarget{#2}{\subsection{#1}\zlabel{#2}}}%
+\newcommand{\mysubsection}[2]{\hypertarget{#2}{\subsubsection{\hl{#1}}\zlabel{#2}}}%
+\newcommand{\myhighlight}[2]{\hypertarget{#2}{\paragraph{#1}\zlabel{#2} \hfill}}%
+\newcommand{\myanchor}[2]{\hypertarget{#2}{\mybold{#1}}}%
+
+
+
+\newcommand{\mylink}[2]{\textbf{\ding{229}\hyperlink{#2}{#1}}}%
+
+\newcommand{\mytablelink}[2]{\textbf{\hyperlink{#2}{\color{toyeerieblack}#1\color{toyblk}}}}%
+
+% --- page references --------------------------------------------------
+
+\usepackage{zref-user,zref-titleref,zref-hyperref}
+
+% --- common style items -----------------------------------------------
+\newcommand{\mybold}[1]{\textbf{#1}}%
+\newcommand{\mybigbold}[1]{{\large\bfseries\raggedright\fftext{#1}}}%
+\newcommand{\myredbold}[1]{\textbf{\textcolor{toyvividred}{#1}}}%
+\newcommand{\myital}[1]{\begin{itshape}{#1}\end{itshape}}%
+
+% image overwrite
+\newcommand{\myimage}[1] {%
+    \begin{center}
+    \includegraphics[width=\linewidth,keepaspectratio=true]{#1}
+    \end{center}
+}
+% fullpage image
+\newcommand{\myfpimage}[1] {%
+    \begin{center}
+    \includegraphics[width=\linewidth/2,keepaspectratio=true]{#1}
+    \end{center}
+}
+
+% Spacing
+\newcommand{\smspace}{\quad}
+\newcommand{\bgspace}{\qquad}
+% Add a bump for some columns
+\newcommand{\bump}{\vspace*{5mm}}
+\newcommand{\subbump}{\vspace*{1mm}}
+
+% lists
+\newcommand{\mylist}[1]{%
+  \vspace{-0.5\topsep}
+  \begin{list}{
+    \color{toyblk}}{\leftmargin=1em\itemsep=3pt\parsep=0pt}#1
+  \end{list}
+}
+
+\renewcommand{\labelitemi}{\ding{109}}
+
+\newcommand{\mybullet}[1]{%
+  \vspace{-0.5\topsep}
+  \begin{itemize}{
+    \color{toyblk}}{\leftmargin=1em\itemsep=3pt\parsep=0pt}#1
+  \end{itemize}
+}
+
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+
+\newcommand{\mychecklist}[1]{%
+  \vspace{-0.5\topsep}
+    \begin{todolist}
+        #1
+    \end{todolist}
+}
+
+\newcommand{\mynumlist}[1]{%
+  \vspace{-0.5\topsep}
+  \begin{enumerate}{
+    \color{toyblk}}{\leftmargin=1em\itemsep=3pt\parsep=0pt}#1
+  \end{enumerate}
+}
+
+\newcommand{\adlist}[1]{%
+  \vspace{-0.5\topsep}
+  \begin{itemize}{
+    \color{toyblk}}{\leftmargin=.5em\itemsep=3pt\parsep=0pt}\small{#1}
+  \end{itemize}
+}
+
+
+% --- tables -----------------------------------------------------------
+
+\usepackage{tabularx}
+\usepackage{colortbl}
+\usepackage{ragged2e}
+\usepackage{multirow}
+\usepackage{dcolumn}
+
+\renewcommand{\tabcolsep}{1mm}
+
+\newcolumntype{x}[1]{%
+>{\raggedright\hspace{0pt}}p{#1}%
+}
+\newcolumntype{y}[1]{%
+>{\centering\hspace{0pt}}p{#1}%
+}
+\newcolumntype{z}[1]{%
+>{\raggedleft\hspace{0pt}}p{#1}%
+}
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\newcommand{\thead}[1]{
+  \fftext\textbf{
+    \noindent%
+    \rowcolors[]{1}{white}{}%
+    \color{toyblk}#1
+  }
+}
+
+\newcommand{\tn}{\tabularnewline}
+
+
+% Basic table
+\newcommand{\mytable}[4][\fftext\normalsize]{
+    {
+    \vspace{2pt plus 6pt}%
+    \noindent%
+    \rowcolors[]{1}{toygold!50!white}{}%
+    \raggedright\setlength{\extrarowheight}{0.15\baselineskip}%
+    \begin{tabularx}{\columnwidth}{#2}
+    \rowcolor{white}
+    #3 % header
+    \rowcolor{toygold!50!white}
+    #4 %body
+    \end{tabularx}
+    \vspace{2pt plus 6pt}
+    }
+}
+
+%Small, centered table
+%Centered table in a fullpage spread, with a black border
+\newcommand{\myctrtable}[4][\fftext\normalsize]{
+    \begin{center}
+    \framebox[\linewidth/2]{
+        \vspace{2pt plus 6pt}%
+        \noindent%
+        \rowcolors[]{1}{toygold!50!white}{}%
+        \raggedright\setlength{\extrarowheight}{0.15\baselineskip}%
+        \begin{tabularx}{\linewidth/2}{#2}
+        \rowcolor{white}
+        #3 %header
+        \rowcolor{toygold!50!white}  
+        #4 %body
+        \end{tabularx}
+        \vspace{2pt plus 6pt}
+    }
+    \end{center}
+}
+
+% This table is used to invoke a two column break in a single column page
+% This only expects two columns!
+\newcommand{\mytwocolumntable}[2][\fftext\normalsize]{
+    {
+
+        \begin{tabularx}{\columnwidth}{X  X}
+        #2 %body
+        \end{tabularx}
+    }
+}
+
+
+% Two-column table for Advancement
+\newkeycommand{\advtable}[VIRTUE=,LEVEL=,LEFTSIDE=,RIGHTSIDE=,LINK=]
+{%  
+    \begin{tcolorbox}[
+        width=\columnwidth,
+        colback=white,
+        colframe=toyblu,
+        fonttitle=\fftext\large,
+        title=\myhighlight{\commandkey{VIRTUE}}{\commandkey{LINK}} \myital{\commandkey{LEVEL}},
+        sidebyside, 
+        sidebyside align=top, 
+        rounded corners=all
+    ]
+    \commandkey{LEFTSIDE}
+    \tcblower
+    \commandkey{RIGHTSIDE}
+    \end{tcolorbox}
+}
+
+% 2-C table version 2
+\newkeycommand{\mytwocoltable}[LEFTSIDE=,RIGHTSIDE=]
+{%  
+    \begin{tcolorbox}[
+        width=\columnwidth,
+        colback=white,
+        colframe=toyblu,
+        sidebyside, 
+        sidebyside align=top, 
+        rounded corners=all
+    ]
+    \commandkey{LEFTSIDE}
+    \tcblower
+    \commandkey{RIGHTSIDE}
+    \end{tcolorbox}
+}
+
+
+
+% --- callouts ----------------------------------------------------------------
+\usepackage[breakable,hooks]{tcolorbox}
+\tcbuselibrary{breakable,skins}
+
+%--- formula / what to roll --------------------------------------------------
+\newcommand{\formula}[2] {%
+    \begin{tcolorbox}[
+        colback=white,
+        colframe=toyeerieblack,
+        fonttitle=\bfseries,
+        colbacktitle=white,
+        enhanced,
+        coltitle=toyblk,
+        coltext=toyblk,
+        halign=flush center,
+        attach boxed title to top center={yshift=-2mm},
+        leftrule=4mm,
+        rightrule=4mm,
+        title={#1}
+    ]
+    \mybold{#2}
+    \end{tcolorbox}
+}
+
+% --- example block ------------------------------------------------------------
+\newcommand{\example}[1] {%
+  \begin{tcolorbox}[
+        width=\linewidth,
+        fonttitle=\bfseries,
+        colback=white,
+        enhanced,
+        colbacktitle=white,
+        colframe=toyeerieblack,
+        coltitle=toyblk,
+        coltext=toyblk,
+        attach boxed title to top center={yshift=-2mm},
+        leftrule=4mm,
+        title=Example
+    ]
+    \small{#1}
+  \end{tcolorbox}
+}
+
+% --- examples block (plural) ------------------------------------------------------------
+\newcommand{\examples}[1] {%
+  \begin{tcolorbox}[
+        width=\linewidth,
+        fonttitle=\bfseries,
+        colback=white,
+        enhanced,
+        colbacktitle=white,
+        colframe=toyeerieblack,
+        coltitle=toyblk,
+        coltext=toyblk,
+        attach boxed title to top center={yshift=-2mm},
+        leftrule=4mm,
+        title=Examples
+    ]
+    \small{#1}
+  \end{tcolorbox}
+}
+
+
+
+% --- summary block ---------------------------------------------------------
+\newcommand{\summary}[1] {%
+  \tcbset{colback=white,colframe=toyblu}
+  \begin{tcolorbox}[
+        width=\linewidth,
+        colback=white,
+        leftrule=4mm,
+    ]
+    \small{#1}
+  \end{tcolorbox}
+}
+
+
+% --- editor block ------------------------------------------------------------
+\newcommand{\ed}[1] {%
+  \begin{tcolorbox}[
+    width=\linewidth,
+    colframe=toyeerieblack,
+    top=3mm,
+    bottom=3mm,
+    colback=toygold!50!white
+    ]
+    \centering
+    \footnotesize{\myital{Ed: #1}}
+  \end{tcolorbox}
+}
+
+% --- flavor block ------------------------------------------------------------
+\newcommand{\flavor}[1] {%
+  \begin{tcolorbox}[
+    width=\linewidth,
+    colframe=toygold,
+    colback=white,
+    rightrule=4mm
+    ]
+    \centering
+    \small{#1}
+  \end{tcolorbox}
+}
+
+
+% --- template block ------------------------------------------------------------
+\newcommand{\template}[2] {%
+  \begin{tcolorbox}[
+        width=\linewidth,
+        fonttitle=\bfseries,
+        colback=white,
+        enhanced,
+        colbacktitle=white,
+        colframe=toyeerieblack,
+        coltitle=toyblk,
+        coltext=toyblk,
+        attach boxed title to top center={yshift=-2mm},
+        leftrule=4mm,
+        title=#1
+    ]
+    \small{#2}
+  \end{tcolorbox}
+}
+
+
+% --- callout blocks ------------------------------------------------------------
+\newcommand{\callout}[1] {%
+  \begin{tcolorbox}[
+        width=\linewidth,
+        fonttitle=\bfseries,
+        colback=white,
+        enhanced,
+        colbacktitle=white,
+        colframe=toyblu,
+        coltitle=toyblk,
+        coltext=toyblk,
+        toprule=4mm,
+        bottomrule=4mm
+    ]
+    \small{#1}
+  \end{tcolorbox}
+}
+
+\newcommand{\colorcallout}[2] {%
+  \begin{tcolorbox}[
+        width=\linewidth,
+        fonttitle=\bfseries,
+        colback=white,
+        enhanced,
+        colbacktitle=white,
+        colframe=#1,
+        coltitle=toyblk,
+        coltext=toyblk,
+        toprule=4mm,
+        bottomrule=4mm
+    ]
+    \small{#2}
+  \end{tcolorbox}
+}
+
+
+\newcommand{\simplecallout}[1] {%
+  \begin{tcolorbox}[
+        width=\linewidth,
+        fonttitle=\bfseries,
+        colback=white,
+        enhanced,
+        colbacktitle=white,
+        colframe=toyblk,
+        coltitle=toyblk,
+        coltext=toyblk
+    ]
+    \small{#1}
+  \end{tcolorbox}
+}
+
+
+\newcommand{\calloutlong}[1] {%
+  \begin{tcolorbox}[
+        width=\linewidth,
+        fonttitle=\bfseries,
+        colback=white,
+        enhanced,
+        colbacktitle=white,
+        colframe=toyblu,
+        coltitle=toyblk,
+        coltext=toyblk,
+        toprule=4mm,
+        bottomrule=4mm
+    ]
+    \footnotesize{#1}
+  \end{tcolorbox}
+}
+
+\newcommand{\goldcallout}[1] {%
+  \begin{tcolorbox}[
+        width=\linewidth,
+        fonttitle=\bfseries,
+        colback=white,
+        enhanced,
+        colbacktitle=white,
+        colframe=toygold,
+        coltitle=toyblk,
+        coltext=toyblk,
+        toprule=4mm,
+        bottomrule=4mm
+    ]
+    \small{#1}
+  \end{tcolorbox}
+}
+
+% --- crunch block ------------------------------------------------------------
+\newcommand{\crunch}[2] {%
+    \begin{tcolorbox}[
+        width=\linewidth,
+        colback=white,
+        leftrule=1mm,
+        colframe=toygold,
+        coltitle=toyvividred,
+        fonttitle=\bfseries,
+        halign=flush center,
+        title=Optional Crunch,
+        halign title=flush right
+    ]
+    \myhighlight{#1}{#2}
+    \end{tcolorbox}
+}
+
+%-------------------------------------------%
+%   THE ARCANA                              %
+%-------------------------------------------%
+
+% --- leechcraft block------------------------------------------------------------
+
+\newkeycommand{\LEECHCRAFT}[Name=,Link=]
+{%
+    \begin{tcolorbox}[
+        width=\linewidth,
+        colback=white,
+        leftrule=4mm,
+        colframe=toygold,
+        coltext=toyblk
+    ]
+
+    \mybigbold{\myanchor{\commandkey{Name}}{\commandkey{Link}}}
+
+    \end{tcolorbox}
+}
+
+% --- liturgies block------------------------------------------------------------
+\newkeycommand{\LITURGY}[Name=,Link=,Paradigm=,Duration=]
+{%
+
+    \begin{tcolorbox}[
+        colbacktitle=toygold,
+        colframe=toyblk,
+        coltitle=toyblk,
+        coltext=toyblk,
+        colback=white,
+        fonttitle=\bfseries,
+        enhanced,
+        halign=flush left,
+        clip upper,
+        title=\mybigbold{\myanchor{\commandkey{Name}}{\commandkey{Link}}}
+     ]
+
+    \commandkey{Paradigm}
+
+    \ifthenelse{\equal{\commandkey{Duration}}{}}{}{\commandkey{Duration}}
+
+    \end{tcolorbox}
+}
+
+
+% --- combat block------------------------------------------------------------
+\newkeycommand{\COMBAT}[Name=,Link=,Desc=]
+{%
+
+    \begin{tcolorbox}[
+        colbacktitle=toygold,
+        colframe=toyblk,
+        coltitle=toyblk,
+        coltext=toyblk,
+        colback=white,
+        fonttitle=\bfseries,
+        enhanced,
+        halign=flush left,
+        clip upper,
+        title=\mybigbold{\myanchor{\commandkey{Name}}{\commandkey{Link}}}
+     ]
+
+    \ifthenelse{\equal{\commandkey{Desc}}{}}{}{\commandkey{Desc}}
+
+    \end{tcolorbox}
+}
+
+
+% --- witchcraft block------------------------------------------------------------
+
+\newkeycommand{\NECRO}[Name=,Link=]
+{%
+    \begin{tcolorbox}[
+        width=\linewidth,
+        colback=white,
+        leftrule=4mm,
+        colframe=toygold,
+        coltext=toyblk
+    ]
+
+    \mybigbold{\myanchor{\commandkey{Name}}{\commandkey{Link}}}
+
+    \end{tcolorbox}
+}
+
+
+\newkeycommand{\NC}[Name=]
+{%
+    \begin{tcolorbox}[
+        width=\linewidth,
+        colback=white,
+        leftrule=4mm,
+        colframe=toygold,
+        coltext=toyblk
+    ]
+
+    \mybold{\commandkey{Name}}
+
+    \end{tcolorbox}
+}
+
+
+% --- wizardry block------------------------------------------------------------
+\newkeycommand{\WIZARDRY}[Name=,Link=,Alignment=,Save=,Duration=,Counter=,Keywords=,Target=]
+{%
+    \begin{tcolorbox}[
+        width=\linewidth,
+        colbacktitle=toygold,
+        colframe=toyblk,
+        coltitle=toyblk,
+        coltext=toyblk,
+        colback=white,
+        fonttitle=\bfseries,
+        enhanced,
+        halign=flush left,
+        clip upper,
+        title=\mybigbold{\myanchor{\commandkey{Name}}{\commandkey{Link}}} 
+     ]
+
+    \faAnkh\bgspace\commandkey{Alignment}
+
+    \faBullseye\bgspace\commandkey{Target} 
+
+    \faSave[regular]\bgspace\commandkey{Save}
+
+    \faClock[regular]\bgspace\commandkey{Duration}
+
+    \faKey\bgspace\commandkey{Keywords} 
+
+    \faRandom\bgspace\commandkey{Counter}
+
+    \end{tcolorbox}
+}
+
+%-------------------------------------------%
+%   RESEARCH                                %
+%-------------------------------------------%
+
+
+
+% --- chymistry block------------------------------------------------------------
+\newkeycommand{\CHYMISTRY}[Name=,Link=,Type=,Pips=,Time=]
+{%
+    \begin{tcolorbox}[
+        width=\linewidth,
+        colbacktitle=toygold,
+        colframe=toygold,
+        coltitle=toyblk,
+        leftrule=4mm,
+        coltext=toyblk,
+        colback=white,
+        fonttitle=\bfseries,
+        enhanced,
+        halign=flush left,
+        clip upper,
+        title=\mybigbold{\myanchor{\commandkey{Name}}{\commandkey{Link}}}
+     ]
+
+
+    \myital{\commandkey{Type}}
+
+    Research Pips: \myital{\commandkey{Pips}}
+
+    Downtime Required: \myital{\commandkey{Time}}  
+
+    \end{tcolorbox}
+}
+
+%-------------------------------------------%
+%   CUNNING                                 %
+%-------------------------------------------%
+
+
+
+
+% --- occultism block ------------------------------------------------------------
+
+\newkeycommand{\OCCULT}[Name=,Link=,Pips=,Time=] 
+{%
+    \begin{tcolorbox}[
+        colbacktitle=toygold,
+        colframe=toygold,
+        coltitle=toyblk,
+        coltext=toyblk,
+        colback=white,
+        fonttitle=\bfseries,
+        enhanced,
+        halign=flush left,
+        clip upper,
+        title=\mybigbold{\myanchor{\commandkey{Name}}{\commandkey{Link}}}
+     ]
+
+
+    Cunning Pips: \myital{\commandkey{Pips}}
+    
+    Downtime Required: \myital{\commandkey{Time}}
+
+
+    \end{tcolorbox}
+}%
+
+% --- marvels block ------------------------------------------------------------
+
+\newkeycommand{\MARVELS}[Name=,Link=,Pips=] 
+{%
+    \begin{tcolorbox}[
+        colbacktitle=toygold,
+        colframe=toygold,
+        coltitle=toyblk,
+        coltext=toyblk,
+        colback=white,
+        fonttitle=\bfseries,
+        enhanced,
+        halign=flush left,
+        clip upper,
+        title=\mybigbold{\myanchor{\commandkey{Name}}{\commandkey{Link}}}
+     ]
+
+    Cunning Pips: \myital{\commandkey{Pips}} 
+
+    Downtime Required: \myital{Weeks}
+
+
+    \end{tcolorbox}
+}%
+
+% --- monster blocks ------------------------------------------------------------
+
+\newkeycommand{\MONSTER}[NM=Monster Name,LK=monster-name,SPD=Speed,AT=\# Targets, Damage, Range,WK=Weakness,HD=1-9,PR=Power,SK=Armor,MR=Morale,SV=Saves,SPL=\# Dice,TRT=Traits,ACT=Actions,NOTE=Notes about the creature]
+{%
+  \begin{tcolorbox}[
+    colbacktitle=toyeerieblack,
+    coltitle=white,
+    fonttitle=\fftext\large,
+    title=\mybigbold{\myanchor{\commandkey{NM}}{\commandkey{LK}}}
+  ]
+
+\mybold{SPD} \commandkey{SPD}; \mybold{WK} \commandkey{WK}; \mybold{AT} \commandkey{AT}; \mybold{Hlth} \commandkey{HD}HD \commandkey{PR}; \mybold{Soak} \commandkey{SK}; \mybold{MRL} \commandkey{MR}; \mybold{SAV} \commandkey{SV}; \mybold{SPL} \commandkey{SPL}; \mybold{TRT} \commandkey{TRT}; \mybold{ACT} \commandkey{ACT}
+  \end{tcolorbox}
+}
+
+
+
+% --- city block ------------------------------------------------------------
+
+
+\newkeycommand{\CITY}[Name=,Link=,State=,Province=,Ruler=,Population=,Resource=]
+{%
+    \begin{tcolorbox}[
+        width=\linewidth,
+        colbacktitle=toygold,
+        colframe=toygold,
+        coltext=toyblk,
+        coltitle=toyblk,
+        colback=white,
+        fonttitle=\bfseries,
+        halign title=flush center,
+        title=\mybigbold{\myanchor{\commandkey{Name}}{\commandkey{Link}}},
+        tabularx={X X}
+    ]
+
+    \mybold{State} & \commandkey{State} \\
+    \mybold{Province} & \commandkey{Province} \\
+    \mybold{Ruler} & \commandkey{Ruler}   \\
+    \mybold{Population} & \commandkey{Population}
+    \ifthenelse{\equal{\commandkey{Resource}}{}}{}{
+       \\ \mybold{Resource} & \commandkey{Resource} \\
+    }
+    \end{tcolorbox}
+}
+
+% --- small god block------------------------------------------------------------
+\newkeycommand{\GOD}[Name=,GodOf,Holy=]
+{%
+
+    \begin{tcolorbox}[
+        colbacktitle=toygold,
+        colframe=toyblk,
+        coltitle=toyblk,
+        coltext=toyblk,
+        colback=white,
+        fonttitle=\bfseries,
+        enhanced,
+        halign lower=flush left,
+        clip upper,
+        title=\mybigbold{\commandkey{Name}}
+     ]
+
+     \commandkey{GodOf}
+
+     \tcblower
+
+     Holy Symbol: \small{\commandkey{Holy}}
+
+    \end{tcolorbox}
+}
+
+% some useful default pdf settings this needs to go last in order to generate a PDF index
+\usepackage[
+    unicode=true,
+    bookmarks=true,
+    bookmarksnumbered=true,
+    bookmarksopen=true,
+    breaklinks=true,
+    pdfpagelayout=TwoPageRight,
+    pdfstartview=Fit,
+    pdfpagemode=UseOutlines,
+    pdfprintscaling=None,
+    pdfborder={0 0 1},
+    backref=section,
+    colorlinks=true,
+    pdfborderstyle={/S/U/W 1}]{hyperref}
+
+\hypersetup{
+  linkcolor = toyvividred,
+  anchorcolor = toyvividred
+}
+\usepackage{hypcap}

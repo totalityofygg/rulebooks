@@ -1,0 +1,46 @@
+% (c) 2020 Stefan Antonowicz
+% Based off of tex found at https://github.com/ludus-leonis/nipajin
+% This file is released under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% Please do not apply other licenses one-way.
+
+\renewcommand{\yggRemembrance}{%
+  \mychapter{Remembrance}{remembrance}
+  \mysectionheader{remembrance/RemembranceHeader}
+  \newpage
+}
+
+\renewcommand{\yggRemembranceText}{%
+
+\flavor{
+  Four Gods wait on the windowsill \\
+  Where once eight Gods did war and will, \\
+  And if the gods themselves may die, \\
+  What does that say for you and I? \\~ \Tilde On the Rainslick Precipice of Darkness
+}
+
+The armies of \mylink{Limbo}{the-afterlife} fight for the otherworldly and monarchical \mylink{Spriggan}{species-spriggan}, who summon and command the damned souls known as \mylink{the Forgotten}{the-forgotten}. The Forgotten consist of the \mybold{Obliterated} (echoes of ancient powers, their names long lost) and the \mybold{Abandoned} (Small Gods whose names are still remembered ... by you).
+
+The beasts, elementals, and demons of Limbo owe allegiance to the King of Elfland, first among the \mylink{Unseelie}{the-inhabitants}. As a descendant of the Unhallowed God, you demand their sworn loyalty. Your \mybold{Sovereignty} reflects your ability to summon and control these creatures, a measure of your dominion. Sovereignty is your birthright, gifted to you through the lingering power of Elfland that flows through your veins. 
+
+\myredbold{Your Sovereignty starts at 1}.  You may summon a number of Forgotten equal to your Sovereignty before you must rest.
+
+
+\cbreak
+
+\mysubsection{Adjourning}{remembrance-adjourning}
+
+When one of the Forgotten \myital{Adjourns}, they immediately wink out of existence. Certain of the \mylink{Abandoned}{forgotten-abandoned} can take things with them when they return to the lonely plane they wander, but unless stated otherwise anything an Obliterated or Abandoned was carrying immediately falls to the ground.
+
+  \myimage{remembrance/Spriggan}
+
+
+\newpage
+
+  \input{remembrance/obliterated.tex}
+  \newpage
+  \input{remembrance/abandoned.tex}  
+  \newpage
+
+  
+}%end
+

@@ -1,0 +1,25 @@
+% (c) 2020 Stefan Antonowicz
+% Based off of tex found at https://github.com/ludus-leonis/nipajin
+% This file is released under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% Please do not apply other licenses one-way.
+
+\renewcommand{\yggCombat}{%
+  \mychapter{Combat}{combat}
+  \mysectionheader{combat/CombatHeader}
+  \newpage
+}
+
+\renewcommand{\yggCombatText}{%
+
+  \input{combat/fighting.tex}
+  \newpage
+  \input{combat/guarding.tex}
+  \newpage
+  \input{combat/dying.tex}
+  \newpage
+  \input{combat/recovering.tex}
+  \newpage
+
+
+
+} %end
