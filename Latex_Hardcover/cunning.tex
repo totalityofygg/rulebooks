@@ -1,0 +1,54 @@
+% (c) 2020 Stefan Antonowicz
+% Based off of tex found at https://github.com/ludus-leonis/nipajin
+% This file is released under Creative Commons
+% Attribution-NonCommercial-ShareAlike 4.0 International License.
+% Please do not apply other licenses one-way.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%% CUNNING
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\renewcommand{\yggCunning}{%
+  \mychapter{Cunning}{cunning}
+    \begin{center}
+    \includegraphics[width=\linewidth,keepaspectratio=true]{cunning/CunningHeader}
+    \end{center}
+    \newpage
+}
+
+
+\renewcommand{\yggCunningText}{%
+
+    \mybold{Cunning} is the catch-all term for the rituals, divination, sacrifices, and voodoo performed during Downtime.  Your abilities as one of the cunning folk are measured by \mybold{Cunning Pips} obtained through the Mystic Virtues of \mypg{Mombo and Cunning Folk}{mystic-virtue-cunning-folk}, and through \mypg{Advancement}{advancement}.
+
+    Cunning Pips can be spent during the \mybold{Production Step} of \mypg{Downtime}{downtime}. Any Cunning Pips you don't spend during the Production Step are lost at the end of the step.
+
+    Cunning also has a cost in coin representing the bribing of officials, purchase of various legal and illegal materials, rental of space to perform the magic, etc. The total cost to perform Cunning depends on the total number of Cunning Pips you spend: the first 5 pips will cost you 100 \FE \myital{each}; the next 5 pips cost you 100 \AG each; and every pip after that will cost you 100 \AU. For example, if you spend 12 Cunning pips, the total will be 500 \FE plus 500 \AG plus 200 \AU. 
+
+    \mytable{Y Y} {
+        \thead{\# Pips} & \thead{Coin per Pip} \\
+    } {
+        1-5 & 100\FE \\
+        6-10 & 100\AG \\
+        11+ & 100\AU
+    }
+
+
+
+Occultism and the creation of Marvels must be performed on \mybold{Unhallowed Earth}. You can either make Unhallowed Earth yourself for a single Cunning Pip (see the occult ritual below), or make use of a \mypg{Locus}{gear-services-loci} if one exists in the Settlement (this can be a Side Story all its own if the Arbiter chooses to do so!).
+
+\cbreak
+
+\myimage{cunning/Cunning1}
+
+
+  \newpage
+  \input{cunning/marvels.tex}
+  \newpage
+  \input{cunning/occultism.tex}
+  \newpage
+  \input{cunning/curses.tex}
+
+}%end

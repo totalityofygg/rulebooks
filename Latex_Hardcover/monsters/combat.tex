@@ -1,0 +1,77 @@
+\mysection{Combat}{monster-combat}
+
+\mysubsection{Basics}{monster-combat-basics}
+
+Monster combat is fairly straightforward - generally speaking, the Arbiter only needs to roll for damage, Morale, Spells, and Saves (for Monsters), while the Adventurers are responsible for rolling Guard, Init, etc.
+
+During their turn in combat, Monsters may take up to two actions:
+
+\mybullet {
+    \item A Monster may take a \mypg{Basic Maneuver}{combat-basic-maneuver}, like moving somewhere Nearby or taking cover;
+    \item A Monster may attack an Adventurer, forcing them (the Adventurer) to make a Guard try; and/or
+    \item A Monster may use an Innate ability that it has (see Monster descriptions below).
+}
+
+Attacking and using Innate Abilities are both Combat Actions. \mybold{Using either ends the Monster's turn in that Moment.}
+
+
+\myimage{monsters/Giant_3}
+
+\cbreak
+
+
+\mysubsection{Innate Abilities}{monster-innate} 
+
+
+% INNATE ACTIONS BEGIN
+\myhighlight{Charge}{monster-action-charge}
+
+The Monster can charge into Combat.
+
+The Monster can move from Nearby to Close and attack in a single Action. Charging attacks deal +4 damage if they hit, and end the Monster's turn (though see \mypg{Brace}{combat-tactical-maneuver-brace} under Combat).
+
+\myhighlight{Grapple}{monster-action-grapple}
+
+The Monster can grab hold of an Adventurer.
+
+If an Adventurer is Grappled, they fail any Guard checks they attempt to make until they succeed in breaking free.  A Monster's grapple can be broken in the following ways:
+
+\mybullet {
+    \item  The Adventurer being grappled succeeds in an Attack try against the Monster. Attack tries are made at a -4 penalty;
+    \item  Any Adventurer deals 1 \HD of damage (meaning 3, 5, or 7 points of damage depending if the Monster's Power is Weak, Average, or Strong) in a single attack;
+    \item  Any Adventurer succeeds in hitting with a \mypg{Gambit}{combat-deeds-gambit} ("I cut off the tentacle holding Sir Blibbilpoop!"). If the Gambit misses, the Adventurer who is being Grappled must make a Guard try or be struck themselves.
+}
+
+
+\myhighlight{Rage}{monster-action-rage}
+
+The Monster can work themselves into a blind rage.  
+
+The Monster can't attack during the Moment they use this Action.  Starting the next Moment, the Monster will concentrate all of its attacks on a single Adventurer.  The Monster's strikes deal +4 damage, and their Morale rolls are at +4.
+
+The Monster is incapable of any tactics in this state.
+
+\newpage
+
+\myhighlight{Rout}{monster-action-rout}
+
+The Monster is really, really good at running away. Adventurers do \mybold{not} get a free attack if the Monster tries to run away during its turn.
+
+\myhighlight{Throw}{monster-action-throw}
+
+The Monster can pick up an Adventurer and throw them.  If the Monster's attack succeeds, the Adventurer is picked up and thrown a number of meters (provided in the Monster description) minus the \SUM of what the Adventurer rolls on their \VIG or \DEX (Adventurer's choice).  Treat the distance thrown as if it were falling damage.
+
+\example {
+    A giant makes a grab at Fridge Largemeat, a knight of little renown - and Fridge fails his Guard roll.  The giant has a Throw of 30m.  Fridge rolls his \VIG (a d10) and gets a 7.  He is thrown 23m (30 - 7), so he'll take 23 damage(!) unless he makes an \RS try with one facet of his Identity and/or makes his \SAVE{Doom}.  See the section on \mypg{Falling}{movement-falling} for more info.
+}
+\cbreak
+
+\myhighlight{Trample}{monster-action-trample}
+
+The Monster can trample someone underfoot. If the Monster's attack succeeds, it subtracts 4 from its damage (minimum 1) and the Adventurer is knocked \effect{Prone}.
+
+\myimage{monsters/MonsterMammoth}
+
+
+% INNATE ACTIONS END
+

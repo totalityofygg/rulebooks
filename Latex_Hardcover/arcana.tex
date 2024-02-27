@@ -1,0 +1,70 @@
+% (c) 2020 Stefan Antonowicz
+% Based off of tex found at https://github.com/ludus-leonis/nipajin
+% This file is released under Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License.
+% Please do not apply other licenses one-way.
+
+\renewcommand{\yggArcana}{%
+  \mychapter{The Arcana}{arcana}
+    \begin{center}
+    \includegraphics[width=\linewidth,keepaspectratio=true]{arcana/ArcanaHeader}
+    \end{center}
+    \newpage
+}
+
+\renewcommand{\yggArcanaText}{%
+\end{multicols*}
+
+Powered by their Crux, the Arcana are the laws, mysteries, chants, balms, scriptures, etc. that manifest the power of \mylink{the Void}{the-void} within \mylink{the Dream}{the-dream}. Each Arcana is associated with one Crux and powered through a Conduit:
+
+
+\mytable {Y Y Y Y} {
+    \thead{Arcana} & \thead{Crux} &  \thead{Conduit} \\
+}{
+    \mypg{Leechcraft}{arcana-leechcraft} & \mypg{Knowledge}{cruces-knowledge} & \INGENUITY \\
+    \mypg{Liturgies}{arcana-liturgies} & \mypg{Faith}{cruces-faith} & \FAITH  \\
+    \mypg{Witchcraft}{arcana-witchcraft} & \mypg{Mojo}{cruces-mojo} & \JUJU  \\
+    \mypg{Wizardry}{arcana-wizardry} and \mypg{Secrets}{arcana-wizardry-secrets} & \mypg{Blood}{cruces-blood} & \BLOOD \\
+}
+
+\begin{center}
+
+\mybold{Symbol Key}
+
+\callout {
+    \mylist {
+      \item \DICE\bgspace The number of dice rolled.
+      \item \hrulefill
+      \item \SUM\bgspace The sum of the dice rolled.
+      \item \hrulefill
+      \item \MOD\bgspace A modifier to the roll you make. Can be positive or negative.
+      \item \hrulefill
+      \item \LENGTH\bgspace How long it takes you to invoke the Arcana. Default is 1 \mylink{Maneuver Action}{combat-maneuvers}.
+      \item \hrulefill
+      \item \faBullseye\bgspace Who or what you can target, and how far away.
+      \item \hrulefill
+      \item \faRandom\bgspace If a Secret can be countered by another Secret (and if so, which one).
+      \item \hrulefill
+      \item \faAnkh\bgspace  The Secret's \mylink{Alignment}{arcana-wizardry-secrets-alignment}.
+      \item \hrulefill
+      \item \faKey\bgspace Any Keyword(s) associated with the Arcana.
+      \item \hrulefill
+      \item \faSave[regular]\bgspace Whether or not a victim gets a \SAVE{Hexes} (Yes or No).  The result of a successful Save will be in the Arcana's description.
+   }
+}
+
+\end{center}
+
+\newpage
+\begin{multicols*}{2}
+
+
+    \input{arcana/leechcraft.tex}
+    \newpage
+    \input{arcana/liturgies.tex}
+    \newpage
+    \input{arcana/witchcraft.tex}
+    \newpage
+    \input{arcana/wizardry.tex}
+    \newpage  
+}%end
+

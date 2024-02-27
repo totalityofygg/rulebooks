@@ -1,0 +1,175 @@
+\mysection{Narcotics}{gear-narcotics}
+
+\flavor {
+    "We were somewhere around Barstow, on the edge of the desert, when the drugs began to take hold."
+
+    ~\Tilde Hunter S. Thompson, Fear and Loathing in Las Vegas
+}
+
+Narcotics (which includes alcohol) are plentiful on the Five Dwarfs, and almost always entirely legal. Each Narcotic has a \MAX value associated with it, indicating the maximum number of times you can use it "safely" each Session.
+
+If you use a Narcotic the \MAX number of times in a given Session, you must check for Addiction.  Make an \RSTRY{\FOC} - if you fail, you're Addicted (see below). Note that there are some Narcotics with a \MAX of 1, which means you should immediately check to see if you're Addicted.
+
+If you use a Narcotic \mybold{more} than the \MAX number of times in a given session, you must check to see if you Overdose in addition to the Addiction try (see below).
+
+
+\myhighlight{Addiction}{gear-narcotics-addiction}
+
+If you become Addicted, you must "get a hit" of the Narcotic at least once at the start of every Session.  Additionally, during any \mylink{Downtime}{downtime}, you must buy a full \UD of the Narcotic (but don't add it to your inventory, you'll use it immediately).  Additional \UD of narcotics can be purchased on top of these before you go back out into the wilds, of course.
+
+If you are unable to get your fix, you are \effect{Sickened} until you get the drug again (\mybold{Pharmaceuticals} under \mypg{Arcana: Leechcraft}{arcana-leechcraft} can prevent this effect for the Session). The only way to cure Addiction is to take some Downtime and get some treatment (see the section on \mypg{Medicine}{vulgate-medicine}).
+
+\cbreak
+
+\myhighlight{Overdose}{gear-narcotics-overdose}
+
+If you exceed the \MAX number of doses listed for the Narcotic, you may suffer an Overdose. Make an \RSTRY{\FOC}. If you roll a Failure, you are immediately afflicted with the negative effect described under the Narcotic; you do not gain its positive benefit. If you do not roll a Failure, you gain the positive benefit of the Narcotic. If you continue to press your luck by purposely Overdosing, move your \FOC die \DCDOWN (but only for the purposes of checking for Addiction and Overdose) each time you make your check. These penalties reset at the end of the Session.
+
+  \myimage{gear/Syringe}
+
+  \newpage
+
+  \mysubsection{Common Narcotics}{gear-table-common-narcotics}
+
+  \myital{Philosophers who know \mylink{Chymistry}{research-chymistry} can create brews, sera, powders, etc that are also narcotic}.
+
+  These are the most common Narcotics available; the costs listed in the \mylink{Outlay}{gear-outlay} section get you \UDD{d4} of "the stuff".  See the section on \mypg{adding and splitting \UD}{dice-asset} if you wish to buy multiple doses. 
+
+  \mytable{Y Y Y Y}{
+    \thead{d16} & \thead{Name} & \thead{Type} & \thead{\MAX} \\
+  }{
+    1 & Adonis & Unguent  & 4  \\
+    2 & Alcohol & Tonic & see below \\
+    3 & Black Lotus & Herb & 1  \\
+    4 & Black- throat & Unguent & 2  \\
+    5 & Corpse Salt & Powder & 4  \\
+    6 & Deerhorn & Powder &  2 \\
+    7 & Dust & Powder &  4 \\
+    8 & Glimpse & Tonic &  2 \\
+    9 & Godsblood & Sera &  4 \\
+    10 & Locus & Powder &  4 \\
+    11 & Pipeweed & Herb &  10 \\
+    12 & Smokes & Herb &  20 \\
+    13 & Snakeyes & Unguent &  2 \\
+    14 & The Bugs & Sera &  1 \\
+    15 & Twitch & Tonic &  4 \\
+    16 & Woad &  Unguent & 2 \\
+}
+
+  \myhighlight{Adonis}{gear-narcotics-adonis}
+
+  Pheromones emitted by decaying Orchidmen, combined with goat saliva and herbs into a paste. Restore +5 Grit, up to your \MAX.
+
+  \mybold{Overdose:} You lose 5 Grit permanently.
+
+
+  \myhighlight{Alcohol}{gear-narcotics-alcohol}
+
+    Restore 2 Grit (even over your \MAX), but make an \RSTRY{\VIG}. If you roll a Failure, you are \effect{Drunk}. If you fail your \RSTRY{\VIG} when you are at \mybold{Drunk -4}, you \mylink{Overdose}{gear-narcotics-overdose}.
+
+  \mybold{Overdose:} You are afflicted by a \mylink{Deadly (d10)}{malignants-toxins} Toxin.
+
+
+  \myhighlight{Black Lotus}{gear-narcotics-black-lotus}
+
+   Requires a \mylink{Pipe}{gear-equipment}. The dried petals of the Black Lotus, which grows near Void cracks and in the labs of magical experiments gone awry. Very expensive and highly addictive.  Smoking slowly (if it's the good stuff) allows you to restore your full Blood \POOL.
+
+  \mybold{Overdose:}  Immediately try \mybold{all} your unspent Blood Dice as if you were performing a Secret (any rolls of a 1 or a 2 loses the die; if you roll triples a Mishap occurs; etc.), though no magic will manifest. If you have no Blood Dice to manifest, you suffer the effects of a \mylink{Lethal (d16)}{malignants-toxins} Toxin.
+
+
+  \myimage{gear/Narcotics}
+
+
+  \myhighlight{Blackthroat}{gear-narcotics-blackthroat}
+
+  A tar taken from the hulls of ships that sail between the isles of the Lost Cities; rubbed on the throat. Restore 1 \UD of \PRE (up to \MAX).
+
+  \mybold{Overdose:} Your throat seizes up.  You are unable to speak for the rest of the Session (including using Arcana and Vulgates that require speech). Any subsequent doses have no effect until the Session ends.
+
+
+  \myhighlight{Corpse Salt}{gear-narcotics-corpse-salt}
+
+  A chemical distillation of putrefying human flesh, dried to a powder and insufflated. Each dose grants you +1 to your \INT tries for the rest of the Session.
+
+  \mybold{Overdose:}  Hard to separate whose thoughts are whose. Your \AWA becomes completely \mylink{Spent}{dice-spent}. If you \AWA is already Spent, you suffer the effects of a \mylink{Lethal (d16)}{malignants-toxins} Toxin.
+
+
+  \myhighlight{Deerhorn}{gear-narcotics-deerhorn}
+
+  Powdered horn of (hopefully willing) Spriggan. Restore 1 \UD of \AWA (up to \MAX).
+
+  \mybold{Overdose:} Your awareness becomes navel-gazing. For the rest of the Session, you (alone) are automatically \effect{Surprised} whenever you enter Combat. Any subsequent doses have no effect until the Session ends.
+
+
+    \myhighlight{Dust}{gear-narcotics-dust}
+
+    The dried blood of those wounded in battle, mixed with herbs and dried to a fine powder.  Insufflated. Each dose grants you +1 to your \VIG tries for the rest of the Session.
+
+   \mybold{Overdose:}  You become afraid and trepidatious. Your \PRE becomes completely \mylink{Spent}{dice-spent}. If your \PRE is already is already Spent, you suffer the effects of a \mylink{Lethal (d16)}{malignants-toxins} Toxin.
+
+  \myhighlight{Glimpse}{gear-narcotics-glimpse}
+
+   A tonic of mondmilch cut with wine. Restore 1 \UD of \CLR (up to \MAX).
+
+  \mybold{Overdose:} Your certainty turns to confusion. You are \effect{Befuddled} for the rest of the Session. Any subsequent doses have no effect until the Session ends.
+
+
+  \myhighlight{Godsblood}{gear-narcotics-godsblood}
+
+  Requires a \mylink{Syringe}{gear-equipment}. Allegedly the blood of a forgotten Small God, injected into the eye (don't blink!). Restore +10 Grit, up to your \MAX.
+
+  \mybold{Overdose:} You feel the baleful gaze of the Abandoned on you. You lose 10 Grit permanently.
+
+
+
+  \myhighlight{Locus}{gear-narcotics-locus}
+
+  The waste product of the glass beetles of the Ultraviolet Grasslands, insufflated.  Locus gives you extraordinary concentration.  Each dose grants you +1 to your \FOC tries for the rest of the Session.
+
+  \mybold{Overdose:}  It becomes impossible to separate signal from noise.   Your \CLR becomes completely \mylink{Spent}{dice-spent}. If your \CLR is already Spent, you suffer the effects of a \mylink{Lethal (d16)}{malignants-toxins} Toxin.
+
+
+  \myhighlight{Pipeweed}{gear-narcotics-pipeweed}
+
+  Requires a \mylink{Pipe}{gear-equipment}. A variety of weeds, harvested, cured, and smoked. Choose 1 every time you smoke: (1) blow out beautiful smoke rings and waft them wherever you please; (2) scare away all Nearby mundane insects; (3) re-roll a failed attempt to recall something (Skill: Listen) or understand something (Skill: Lore); (4) gain +4 on any single non-physical Skill \RO attempt.  You can only perform 1 effect at a time.  
+
+  \mybold{Overdose:} You become \effect{Sickened} until the end of the Session.
+
+  \myhighlight{Smokes}{gear-narcotics-smokes}
+
+  Most common and widely used narcotic, made from a single plant, harvested and cured, rolled in smokable paper and sold in bundles.  If you smoke during a Breather, restore +1 Grit (up to your \MAX).  Additionally, if you smoke when you are Hung Over, \RSTRY{d6}.  If you succeed, the Hung Over effect ends.
+
+  \mybold{Overdose:}  You become \effect{Sickened} until the end of the Session.
+
+  \myhighlight{Snakeyes}{gear-narcotics-snakeyes}
+
+  Pretty much exactly what it says, mushed into a paste and mixed with mud. Restore 1 \UD of \TAL (up to \MAX).
+
+  \mybold{Overdose:} You get shaky and jumpy. You are -4 on \mybold{all} \RO and \RS tries for the rest of the Session. Any subsequent doses have no effect until the Session ends.
+
+  \myhighlight{The Bugs}{gear-narcotics-the-bugs}
+
+   Requires a \mylink{Syringe}{gear-equipment}. Congealed and maggoty blood from the corpses of Feathered Swine. When injected directly into a wound, instantly hatches strange insects that eat dead flesh and regurgitate a healing slime.  Heal 1 Flesh.
+
+  \mybold{Overdose:} The bugs eat too much. Lose 1 Flesh permanently.
+
+ \myhighlight{Twitch}{gear-narcotics-twitch}
+
+    A tincture of Pooka saliva and dead flies, drunk. Each dose grants you +1 to your \DEX tries for the rest of the Session.
+
+  \mybold{Overdose:} You feel like you're losing control of your body. Your \TAL becomes completely \mylink{Spent}{dice-spent}. If your \TAL is already Spent, you suffer the effects of a \mylink{Lethal (d16)}{malignants-toxins} Toxin.
+
+
+\cbreak
+
+
+  \myhighlight{Woad}{gear-narcotics-woad}
+
+  Hallucinogenic blue paste rubbed on the face, bestows visions of the eternal battles of Valhalla, shield maidens urge you toward glory. You are immune to the effect \effect{Afraid} and deal +2 damage in your next Combat, but only if you become \effect{Enraged}. The Woad is highly water soluble and needs to be reapplied after every Combat (presumably during a Breather) or if you get wet.  You can only have 1 application of Woad on at a given time.
+
+  \mybold{Overdose:} You've completely overloaded your adrenal gland. You can't take any rest (including Breathers) until the end of the Session. Any subsequent doses have no effect until the Session ends.
+
+
+
+
+\myimage{gear/Smoker}

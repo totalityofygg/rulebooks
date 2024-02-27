@@ -1,0 +1,87 @@
+\mysection{Exertions}{movement-exertions}
+
+  \mysubsection{Jumping}{movement-jumping}
+
+  If you need to jump over something (a pit of snakes, a river of green slime, the waters of the Lethe, etc.), you must make an \RO try using your \MD plus either your \VIG or \DEX (your choice). Finally, add or subtract the modifier for the distance:
+
+  \formula {Jumping Try}{
+    \RO : \MD ~\\ \PLUS (\VIG or \DEX) \PLUS See Below
+  }
+
+  The distance modifier depends on whether or not you have a running start. An Adventurer can't jump more than 9m (4m if standing):
+
+  \mytable{Y Y Y}{
+    \thead{Distance(m)} & \thead{\small{Running Bonus}} & \thead{\small{Standing Bonus}} \\
+  }{
+    1 & +9 & -3 \\
+    2 & +7 & -5 \\
+    3 & +5 & -7 \\
+    4 & +3 & -9 \\  
+    5 & +0 & n/a \\
+    6 & -3 & n/a \\
+    7 & -5 & n/a \\
+    8 & -7 & n/a \\
+    9 & -9 & n/a 
+  }
+
+  \example {
+    An unarmored Adventurer (d20) with a d10 \DEX wants to make a running jump over a 3m pit.  They have to \RO with a d20+d10+5.
+
+    \myskip
+
+    The solider with Heavy armor (d4) and a d10 \VIG wouldn't be able to jump over the same pit \myital{at all} without a very lucky roll and a little help (rolling their \mylink{Presence}{adventurer-personality}, for example).
+  }
+
+\cbreak
+
+\mysubsection{Swimming}{movement-swimming}
+
+Adventurers are heroic; provided you are unarmored you can generally swim long distances in calm water without any issue (at the Arbiter's discretion). If there's a storm, the distance is exceptionally far, you're exceptionally Burdened, etc. use the \MD as follows:
+
+\formula{Swimming Try}{
+    \RO : \MD ~\\ \PLUS (\VIG or \DEX) \PLUS See Below
+  }
+
+
+Whenever the Arbiter deems appropriate, the Adventurer \RO using their \MD plus either \VIG or \DEX (their choice). 
+
+If the Adventurer is carrying more than their Skill: Salt modifier (+1 to +4) in Burden, subtract the difference from the die roll.
+
+\example {
+    The inimitable Atalanta is Trained (d8,+1) in Skill: Salt. After a disagreement aboard the pirate ship \mybold{Tentacle}, she escapes overboard carrying the captain's chest (4 Burden). She can dimly see shore in the distance, and strikes out for it in rough seas. She immediately drops her weapons (except for a Dagger - the Arbiter rules that this doesn't take any time), but refuses to drop the chest. Her \RO try will be a d20 (her \MD, since she's unarmored), plus her \DEX (d10). Her current Burden is 4, however, because of the chest - so she suffers an additional -3 penalty (her Burden minus her Skill: Salt) to her try.
+}
+
+If you fail your Swimming try, take 1 point of damage directly to Flesh. Once your Adventurer is brought to 0 Flesh you begin \mylink{Dying}{combat-dying} from drowning. Start a timer - every real-world minute you continue swimming, try your \DEATH as you fight for your life against the pull of the deep.
+
+
+\newpage
+
+No doubt, you'll want to shed your gear in order to improve your chances. At the Arbiter's discretion, each moment spent on these actions prompts a Swimming Try.
+
+\callout{\footnotesize{
+\mybullet {
+    \item Dropping items with Burden takes no time (for something in the hand), or 1 to 2 \myital{Moments} (trying to get a pack off, for instance).
+    \item Light Armor takes 1 \myital{Moment} to remove.
+    \item Medium Armor takes 3 \myital{Moments} to remove.
+    \item Heavy Armor takes 5 \myital{Moments} to remove.
+}}}
+
+If you're unlucky enough to get into Combat while swimming, all your Maneuvers take twice as long i.e. it takes you two Actions to move from Close to Nearby, two Actions to get something from your pack, etc. You are unable to use Tactical Maneuvers or Deeds (only Basic Maneuvers and Attacks) and take a -4 to all \RO tries (including Attacking and Guarding). 
+
+\myimage{movement/Falling}
+
+\cbreak
+
+  \mysubsection{Falling}{movement-falling}
+
+  Whenever you're climbing something, there's always a chance you'll fall. If you fall 5m or less, there's no damage (unless it's into a pit of spikes or something). For every meter over 5 you fall, you take 1 damage (so 6m would be 6 damage).  This damage can be absorbed by Armor but not Grit (or a shield).  
+
+  You get 2 chances to reduce damage from falling.
+
+  \mynumlist {
+    \item \RS using any aspect of your \mylink{Identity}{adventurer-identity} (Vigor, Dexterity, Intelligence, or Focus). If you succeed, take half damage.
+    \item \SAVE{Doom}.  If you succeed, take half damage again.
+  }
+
+  These effects stack - so making your \VIG (or \DEX or whatever) try plus your \SAVE{Doom} will reduce the amount of damage by 75\%.  Roll the check and Save before you apply damage to Armor or Flesh.  If falling brings you to 0 Flesh, you are \mylink{Dying}{combat-dying} - and you also take \effect{Bleeding} and \effect{Knocked Out}.
+

@@ -1,0 +1,59 @@
+\end{multicols*}
+\begin{center}
+\mysection{Saves}{adventurer-saves}
+
+\summary {
+    \begin{center}
+    
+  You missed the poison needle in the chest, got too close to the dragon's flame, or didn't kill the swamp hag before she pointed her magic wand at you and caused snakes to shoot out and try to bite you on your face. Saves represent your raw personal luck in escaping harm. There are three different \mybold{Saves:} Hexes, Toxins, and Doom.
+
+    \myskip
+
+    Pick one Save (Hexes, Toxins, or Doom). You are Preserved (d8,+1) with that Save.  All the other Saves are Defenseless (d4,+0).
+    \end{center}
+}
+
+\end{center}
+
+\begin{multicols*}{2}\raggedcolumns
+
+A Save try is your Save plus its bonus, plus a d20, plus any modifiers (up to -4/+4) assigned by the Arbiter.
+
+
+
+\formula{Save Try}{
+    \RO: Save \PLUS \mybold{d20} \PLUS Bonus \PLUS Modifiers
+}
+
+  Each Save has a name level attached to it to describe how rad you are:
+
+    \mytable{X c c}{
+    \thead{Save} & \thead{Die} & \thead{Bonus} \\
+  }{
+      Defenseless & d4 & +0 \\
+      Preserved  & d8 & +1 \\
+      Protected & d12 & +2 \\
+      Strong & d20 & +3 \\
+      Unbeatable & d24 & +4 \\
+  }
+
+
+\mybold{You can always choose to fail a Save if you so desire}.
+
+\cbreak
+
+\mybullet {
+
+     \item \myanchor{\mybold{Hexes}}{save-hexes} includes certain spells and magical effects. If a spell description says "Save for half damage", this is the Save you roll.
+    \item \myanchor{\mybold{Toxins}}{save-toxins} includes various and sundry poisons and diseases.  If a poison or disease description says "Save or suffer d100 damage", this is the Save you roll.
+    \item \myanchor{\mybold{Doom}}{save-doom}  includes dragon's breath, the gaze of a medusa, or things that might kill you outright.  If a Monster's description says something like "Save or die", this is the Save you roll.
+}
+
+  
+\example {
+    Aelfirth the Mystic has a Preserved (d8,+1) Save in Hexes, and is Defenseless (d4,+0) in Toxins and Doom. She is in a battle with handful of skeletons controlled by a Deep One shaman.  The shaman hits her with a water bolt for 8 damage (Save for Half).  She tries a \SAVE{Hexes}(d8+d20+1); if she can \RO, she'll only take 4 damage.
+
+\myskip
+
+    Later, Aelfirth turns a corner and comes face-to-face (so to speak) with a Mirror of Petrifaction. She tries her \SAVE{Doom}(d4+d20+0); she must \RO in order to remain un-stoned.
+}

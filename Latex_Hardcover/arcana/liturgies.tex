@@ -1,0 +1,974 @@
+% (c) 2020 Stefan Antonowicz
+% Based off of tex found at https://github.com/ludus-leonis/nipajin
+% This file is released under Creative Commons
+% Attribution-NonCommercial-ShareAlike 4.0 International License.
+% Please do not apply other licenses one-way.
+
+\end{multicols*}
+\mysection{Liturgies}{arcana-liturgies}
+
+The Liturgies are performed using your \mylink{Faith Dice}{cruces-faith}. You must have your \mypg{Holy Symbol}{liturgies-holy-symbol} to perform a Liturgy. Liturgies require both hands and the ability to speak.
+
+When a Liturgy tells you to Spend a Faith Die, roll it and immediately remove it from play. Otherwise, when you try a Faith Die, it is Spent if you roll a Failure (a 1 or a 2). You must declare how many Faith Dice you are committing to invoke a Liturgy before you roll. Details about regaining your Faith can be found in the chapter on the \mypg{Crux of Faith}{cruces-faith}.
+
+\callout {
+    There are four formularies of the Liturgies:
+
+    \mybullet {
+        \item \mylink{Ablutions}{liturgies-ablutions}: Can only be used on yourself. Take Minutes to perform; cannot be used in Combat.
+        \item \mylink{Hymns}{liturgies-hymns}: Can only be used in Combat. Take 1-2 Maneuver Actions to prepare.
+        \item \mylink{Lorespells}{liturgies-lorespells}: Can only be used on others. Take Minutes to perform; cannot be used in Combat. 
+        \item \mylink{Orisons}{liturgies-orisons}: Can only be used on others in Combat. Take 1 Combat Action to perform.
+    }
+}
+
+
+Each Small God shares its Liturgies with the other Small Gods of its \mypg{Paradigm}{faith-paradigm}, though it is possible to find Liturgies that belong to your Small God alone - etched on bronze tablets and hidden by long-dead priests; forgotten in reliquaries lying in pawn shops; or written in the slime of snails tripping balls on 'shrooms.
+
+See the Liturgical Guide in \mypg{Appendix D}{appendix-e} for a list of Liturgies sorted by Paradigm.
+
+
+\callout{
+
+    For each Liturgy (Novitiates, Clerics, Apostles, and Saints) choose 1 Liturgy aligned with your Paradigm, and 1 of any Paradigm.
+
+\myskip
+
+    Should you take all four Liturgies, you should have 8 Ablutions, Hymns, Lorespells, and/or Orisons in total.
+}
+
+
+
+
+\begin{multicols*}{2}
+
+
+
+\mysubsection{The Holy Symbol}{liturgies-holy-symbol}
+
+Your Holy Symbol allows you to harness your Faith to perform the Liturgies of your Small God.  Tell the Arbiter what the Holy Symbol of your Small God is (examples of common ones are found in the section on \mylink{the Small Gods}{appendix-d} in Appendix D). Your Holy Symbol is a \mylink{Holy Relic}{miracle-holy-relic}; you must perform the Miracle of \mylink{Holy Relic}{miracle-holy-relic} to create a new one if yours is lost or destroyed.  Remember that your Holy Symbol contains between 1-4 Faith dice that can be counted as part of your pool. If you are separated from your Holy Symbol when you have no Faith pool left (it's stolen or taken from you), or you Spend the Faith that is inside of your Holy Symbol when you have no Faith pool left, you immediately suffer a \mylink{Crisis of Faith}{table-crisis-of-faith}. If the Faith inside of a Holy Symbol becomes completely spent, the Holy Symbol becomes a normal item (and can't be used to perform Liturgies).
+
+Certain Liturgies have a \Duration that depends on the number of Faith \DICE rolled in the invocation:
+
+  \mytable{Y Y} {
+    \thead{\DICE}  & \thead{\Duration} \\
+  } {
+            1 & \DUR{d4} \\
+            2 & \DUR{d6} \\
+            3 & \DUR{d8} \\
+            4 & \DUR{d10} \\
+            5 & \DUR{d12} \\
+            6+ & \DUR{d16} \\
+  }
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%  ABLUTIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\mysubsection{Ablutions}{liturgies-ablutions}
+
+\callout {
+    Ablutions can only be used on yourself; they cannot be invoked on another (though others may gain the benefit of being Close to you). Ablutions take Minutes to perform, and cannot be invoked while in Combat.  Unless stated otherwise, Ablutions vanish at the end of the Session. Each Ablution is distinct and performing it again will remove the previous blessing.
+}
+
+
+\LITURGY [
+  Name = Armor of the Gods,
+  Link = arcana-mystery-armor-of-the-gods,
+  Paradigm = Civilized
+]
+
+You summon a suit of holy armor; what the armor looks like is up to you, but it should be elaborate/brutal/gilded etc.\@ (something that makes you stand out in a crowd). You can't wear any other armor while wearing Armor of the Gods.  Your \MD drops to d4; the \UD for the Armor depends on the number of \DICE invested: 1 d4; 2 d6; 3 d8; 4 d10; 5+ d12.  The Armor cannot be repaired; once its \UD is Spent, the Armor disappears.
+
+\LITURGY [
+  Name = Barkskin,
+  Link = arcana-mystery-barkskin,
+  Paradigm = Heathen
+]
+
+Spend up to 4 \DICE to become covered in a heavy bark.  Your weight is increased by \DICE x100kg and all physical damage is reduced by -\DICE (minimum 1) - but you can't swim, jump, or run. In addition, you sprout \DICE branches; you may \mypg{Sunder}{combat-deeds-sunder} a branch as if it were a Shield to protect yourself or anyone Close to you from physical damage.
+
+
+\LITURGY [
+  Name = Blessed Brew,
+  Link = arcana-mystery-blessed-brew,
+  Paradigm = Civilized
+]
+
+You create \DICE draughts of a sacramental beer. Each draught grants you +4 Grit (even over \MAX). Any draughts not consumed disappear at the end of the Session.
+
+\LITURGY [
+  Name = Children of Shul,
+  Link = arcana-mystery-children-of-shul,
+  Paradigm = Empyrean
+]
+
+You create \DICE small moons that circle the top of your head, casting moonlight Close and Nearby. The shadows thrown by this moonlight give a +\DICE bonus (up to +4) to all \mypg{Whispers}{vulgate-whispers} made by any members of your Band who are Nearby. The moonlight will also activate abilities and powers that manifest in lunar rays (like lycanthropy), and throw light equivalent to \DICE x10 candles.
+
+You can unerringly throw one these moons at Nearby Monsters every Moment, striking for 4 damage each (including creatures only struck by Magic weapons).  When you have no moons left, the liturgy ends. Otherwise the Children of Shul remain for the Session, or until you dispel them.
+
+\LITURGY [
+  Name = Corsair's Blade,
+  Link = arcana-mystery-corsairs-blade,
+  Paradigm = Errant
+]
+
+Spend up to 4 \DICE to summon a magical rapier, saber, or cutlass that only you can wield.  The blade is a \FOC weapon that deals \DICE+2 damage. The Corsair's Blade ignores Armor and Soak, and while you wield it you always win Init. The blade is Magic. Because there is no die to roll when dealing damage, it cannot Crit or be Fumbled. The weapon lasts for the Session, or until you dispel it.
+
+
+\myimage{arcana/Liturgies1}
+
+\newpage
+
+\LITURGY [
+  Name = Crusader's Helm,
+  Link = arcana-mystery-crusaders-helm,
+  Paradigm = Righteous
+]
+
+
+Spend up to 4 \DICE to summon an ivory basinet, complete with crest, neck guard, and visor.  While worn, the Crusader's Helm protects you as a normal helmet (ignore certain Physical Wounds, etc), and you can absorb up to \DICE \mypg{Secrets of the Mind}{arcana-wizardry-secrets-alignment} without effect.  With the visor down you can detect Invisible creatures and are immune to \mylink{The Drop}{combat-drop}. 
+
+\LITURGY [
+  Name = Davy Jones's Locker,
+  Link = arcana-mystery-davy-joness-locker,
+  Paradigm = Cthonic
+]
+
+You must be near a body of water to use this liturgy (a river is OK, a puddle isn't).  You summon a chest up to \DICE meters in length, width, and height.  The box can hold up to \DICE X100kg in weight, or about 25 Burden (provided the box is big enough in terms of height, width, and depth i.e. you could lie a 2 meter long pole in a 2 \DICE locker).  Once you seal the box and carve your name onto it, the waters will take the locker back beneath the surface, where it will disappear.  At any time, you can return to the same body of water and bring the locker back from the depths with a word. Otherwise, only your death will return the locker from the deeps, washing up on shore 7 days afterwards for some lucky (or unlucky) soul to find. If you place a living thing inside, it can breathe - but it will starve or die of thirst without food or water (incidentally, this is a great way to make \myital{vodyanoi}).
+
+\LITURGY [
+  Name = Doppelg{\UmlautA}nger,
+  Link = arcana-mystery-doppelganger,
+  Paradigm = Cunning
+]
+
+Spend 2 Faith. If you have the opportunity to observe someone for Hours, you can flawlessly disguise yourself as that person - not even their family members will be able to tell the difference at a glance.  While your appearance is identical, you don't have any of their memories or abilities. The Liturgy also grants you the ability to speak any Idiolect or Dialect (if your game uses those rules).
+
+\LITURGY [
+  Name = Gory Locks,
+  Link = arcana-mystery-gory-locks,
+  Paradigm = Monstrous
+]
+
+Spend \DICE Faith to turn yourself into a hideous undead caricature of your "normal self".  You immediately gain \effect{Unhallowed} and gain the following effects, based on the number of \DICE spent:  1-2 you are immune to \mypg{Secrets of the Mind}{arcana-wizardry-secrets-alignment}; 3-4 you are immune to \mylink{Toxins}{malignants-toxins}; 5-6 you are immune to \mypg{Secrets of Force}{arcana-wizardry-secrets-alignment}; 7+  you are immune to iron weapons.  These effects are cumulative.
+
+You can only speak Graveborn for the duration of the liturgy.  Your undead form prompts an \INSANITY try or morale check among all who see you (Allies and Monsters alike), unless they have seen you in your undead form before. The liturgy lasts for the Session, or until you dispel it. 
+
+\LITURGY [
+  Name = Hand of Fate,
+  Link = arcana-mystery-hand-of-fate,
+  Paradigm = Ruinous
+]
+
+Spend 2 Faith. At any time during the rest of the Session, you may change the face of any die that hits the table (for example, if an Ally were to roll a 1 on a critical roll, you could change it to be a "natural 20"; conversely, you could change a 20 to a "natural 1"). Hand of Fate can only be invoked once per Session. 
+
+\LITURGY [
+  Name = Incinerate,
+  Link = arcana-mystery-incinerate,
+  Paradigm = J{\UmlautO}tnar
+]
+
+This liturgy requires you to create a bonfire.  You can place up to \DICE inorganic objects into the fire weighing no more than \SUMDICE kg.  The objects are burned to a pile of enchanted ash, which can be harvested and stored as an insignificant item (0 Burden).  When you wish the objects to become whole again, you must build a fire and sprinkle the ash inside of it; you can reach into the fire unharmed to pull the objects from the flames as they were when you placed them into the fire.  If you perish before the objects are retrieved, the ash reverts to normal, unenchanted ash and the objects are destroyed.
+
+
+\LITURGY [
+  Name = Lady Luck,
+  Link = arcana-lady-luck,
+  Paradigm = Errant
+]
+
+Spend \DICE Faith, but put them to the side instead of removing them from play. For the remainder of the Session, you may roll \mybold{one} of these dice to modify \myital{any} \RO or \RB roll (by Ally or Monster alike) either plus or minus the \SUMDICE of the die roll.  You can only use 1 die per roll.  Regardless of the \SUMDICE of the die, the Faith die is lost the moment it is rolled.  Any unused \DICE are lost at the end of the Session, or if you (re)invoke Lady Luck.
+
+
+\LITURGY [
+  Name = Mirror Image,
+  Link = arcana-mystery-mirror-image,
+  Paradigm = Cunning
+]
+
+
+You create \DICE illusory images of yourself, which move as you move and always stay Close to you. They are constantly stepping through each other, so that it is impossible to tell which of these is an illusion, and which is the real you. When an enemy attacks you, roll to see if they hit you or an image (equal chance). An image vanishes as soon as it suffers a solid impact (a blow from a mace, but also a slap). Area effects such as a dragon's breath will cause all images to instantly vanish (and you'll take fire breath damage, naturally). The Mirror Images otherwise last until the end of the Session.
+
+
+\LITURGY [
+  Name = Preserve,
+  Link = arcana-mystery-preserve,
+  Paradigm = J{\UmlautO}tnar
+]
+
+By touching an object, you are able to freeze it for a period of time in order to preserve it.  If the object is an Ally or Monster, they must be lying completely still.  Unwilling creatures get a Save.  While frozen, any toxins, diseases, bleeding, or negative effects are stopped for a period of time, depending on the number of dice spent.  You cannot end this liturgy willingly once it has begun, though it could be ended prematurely by great heat (a very large bonfire, for example) or by taking more than \SUMDICE points of damage, which will cause the object to shatter into many pieces.  
+
+1 Faith: Minutes; 2-3 \DICE: Days; 4-5 \DICE: Weeks; 4 \DICE: Months; 6-7 \DICE: Years; 8+ \DICE: Permanent. 
+
+
+\LITURGY [
+  Name = Revered Aegis,
+  Link = arcana-mystery-revered-aegis,
+  Paradigm = Righteous
+]
+
+Spend \DICE Faith. You summon a brightly mirrored shield that can be \mylink{Sundered}{combat-deeds-sunder} up to \DICE times before it disappears.  The shield floats nearby, leaving both of your hands free.  In addition, the mirror of the shield reflects images back in a flattering on unflattering way, depending on your desire, and can be used to reflect / refract light. 
+
+\myimage{arcana/Liturgies2}
+
+\LITURGY [
+  Name = Sanguine Remedy,
+  Link = arcana-mystery-sanguine-remedy,
+  Paradigm = Cthonic
+]
+
+You can heal Flesh by drinking another sentient creature's blood.  The creature must be alive when you feast on them; the act of drinking their blood takes their life (kills them).  Spend 1 Faith to Heal yourself to full Flesh and Grit, and make an \INSANITY try.
+
+\newpage
+
+\LITURGY [
+  Name = Sacred Smoke,
+  Link = arcana-mystery-sacred-smoke,
+  Paradigm = Heathen
+]
+
+Choose up to \DICE \mylink{Narcotics}{gear-narcotics}, and have your Small God inject them directly into your brain through the Sacred Smoke. Roll \mylink{Addiction}{gear-narcotics-addiction} as normal. This Ablution requires a pipe, but you otherwise don't need to have the drugs in your possession.  See the appropriate sections under \mylink{Gear}{gear} for a list of Narcotics and details on Addiction.
+
+\LITURGY [
+  Name = Sceptre of Ruin,
+  Link = arcana-mystery-lucky-day,
+  Paradigm = Ruinous
+]
+
+Spend up to 6 \DICE. A sceptre appears in your hand, glowing with malevolent fire. The sceptre is a 2h \FOC weapon that deals \DICE+\DICE damage. Every time the sceptre deals damage, reduce its damage by 1. The sceptre can strike creatures who are only struck by magical weapons, but because there is no die to roll when dealing damage, it cannot Crit or be Fumbled. 
+
+Once the damage is exhausted (reaches 0), the Sceptre disappears.
+
+
+\LITURGY [
+  Name = Slimeform,
+  Link = arcana-mystery-slimeform,
+  Paradigm = Monstrous
+]
+
+You transform yourself and all of your Gear into a slime.  You can absorb up to \SUMDICE+\DICE damage without any ill effects (damage after this goes straight to Flesh, and immediately ends the liturgy).  You are unable to attack, talk, cast spells, etc while in Slimeform, but you can move at a the pace of a slow walk, climb walls, hang from the ceiling, and slip under the cracks of doors if you wish.  The effect lasts for the Session or until you dispel it.
+
+
+\LITURGY [
+  Name = Welkin's Gaze,
+  Link = arcana-mystery-welkin-gaze,
+  Paradigm = Empyrean
+]
+
+You cast your gaze to the heavens, which will show you events transpiring within \DICE x 50km from you. You only need to describe what you want to see and it will appear, but the vision is misty and it's hard to make out details.  You can't see things that are not exposed to the sky, so if you wanted to "see the body of Sir Tremalane on the northern battlefield", it may only show you the spot where he was buried.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%  HYMNS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mysubsection{Hymns}{liturgies-hymns}
+
+\callout {
+    Hymns can only be used in Combat. A Hymn will take 1 or 2 Maneuver Actions to prepare i.e. if a Hymn says it takes \myital{1 Maneuver Action}, it will take you 1 Maneuver Action to prepare, and can be used on your second Action. Any effects of Hymns immediately cease at the end of Combat. Unless otherwise noted, if a Hymn is performed again it replaces the previous version of the same Hymn.
+}
+
+\LITURGY [
+  Name = Abyssal Trident,
+  Link = arcana-mystery-abyssal-trident,
+  Paradigm = Cthonic,
+  Duration=1 Maneuver Action
+]
+
+You summon an ethereal trident to your hand. The Abyssal Trident cannot be used in melee, it must be thrown at a Nearby or Far-Away target. The Abyssal Trident is a \FOC weapon that deals \DICE x2 damage. The Abyssal Trident immediately dissipates after it is thrown, or at the end of Combat. 
+
+\LITURGY [
+    Name=Blessed Blade,
+    Link= arcana-mystery-blessed-blade,
+    Paradigm = Righteous,
+    Duration=1 Maneuver Action
+]
+
+Spend 1 Faith. The weapon you are holding is Magical and cannot be dropped.
+
+\LITURGY [
+  Name = Eye of Flame,
+  Link = arcana-mystery-eye-of-flame,
+  Paradigm = Righteous,
+  Duration=1 Maneuver Action
+]
+
+Spend 1 Faith. Your eyes burn like coals, allowing you to see all Invisible and hidden things. Knaves who are using the \mylink{Whisper of the Bride}{vulgate-whisper-the-bride} must make a new \mypg{Whisper Try}{vulgate-whispers} against a Target Number of 7. You can also see through darkness (including magical darkness), and are immune to \effect{Blindness}. If you use this while already Blinded, the effect immediately ends.
+
+
+
+
+\LITURGY [
+  Name = Great Strength,
+  Link = arcana-mystery-great-strength,
+  Paradigm = Errant,
+  Duration=1 Maneuver Action
+]
+
+Spend \myital{1 Maneuver Action} and roll 1 Faith Die. You may add the result of this die to any \RO or \RB try you make that uses \VIG (including using \VIG weapons). You can roll multiple times, but each roll you make takes 1 Maneuver Action. If you do not use add the \SUMDICE to an \RO or \RB try before Combat is over, the bonus is lost.
+
+\LITURGY [
+  Name = Hecate's Blessing,
+  Link = arcana-mystery-hecates-blessing,
+  Paradigm = Cunning,
+  Duration=1 Maneuver Action
+]
+
+Spend 1 Faith. Until the end of Combat, you may use your Faith to cast \mypg{Wizardry Arcana}{arcana-wizardry} from a \mypg{Fetish}{fetishes}.
+
+\LITURGY [
+  Name = Hone,
+  Link = arcana-mystery-hone,
+  Paradigm = Civilized,
+  Duration=1 Maneuver Action
+]
+
+You run your finger over your weapon, imbuing it with sacred power. If the object is a Bashing weapon, it deals +\DICE damage; if the object is a Stabbing or Chopping weapon, it deals +\DICE X2 damage. The edge must be smaller than your outstretched arms.
+
+
+\LITURGY [
+  Name = Indomitable Mail,
+  Link = arcana-mystery-instantaneous-repair,
+  Paradigm = Civilized,
+  Duration=1 Maneuver Action
+]
+
+Spend 1 Faith. You may repair a suit of Armor up to its \MAX value.
+
+\cbreak
+
+\myimage{arcana/Mystic_2}
+
+\newpage
+
+\LITURGY [
+  Name = Lucky Throw,
+  Link = arcana-mystery-lucky-throw,
+  Paradigm = Ruinous,
+  Duration=1 Maneuver Action
+]
+
+ You must be holding a Throw weapon. Spend 1 Faith.  You may hurl this weapon up to Far-Away without missing. You do not need to see the Monster, but you do need to know their approximate location, and there must be a clear path you could trace to reach them. The path can be as convoluted as required, bouncing off of walls and ricocheting off the floor. The weapon will pass through any gaps it could reasonably fit through (a hand axe could pass through a crack in a door but not a keyhole, for example).
+
+
+\LITURGY [
+  Name = Misericorde,
+  Link = arcana-mystery-misericorde,
+  Paradigm = Cthonic,
+  Duration=1 Maneuver Action
+]
+
+You must be holding an \mybold{iron} Dagger. Spend 1 Faith.  The next time you strike a Monster Close to you with this weapon, it will ignore any Armor, deal \MAX damage, and the victim must Save or be inflicted with \effect{Bleeding}.
+
+\LITURGY [
+  Name = Monstrous Aspect,
+  Link = arcana-mystery-monstrous-aspect,
+  Paradigm = Monstrous,
+  Duration=\DICE Maneuvers
+]
+
+Gain \DICE of the following \mypg{Monster Traits}{monster-traits}: \mylink{Acidic}{monster-trait-acidic}; \mylink{Amphibious}{monster-trait-amphibious};
+\mylink{Cannibal}{monster-trait-cannibal} (taking this Trait requires an \INSANITY try); \mylink{Leaping}{monster-trait-leaping};
+\mylink{Pack}{monster-trait-pack} (treat other Adventurers Close to you as "Pack Monsters"); \mylink{Slippery}{monster-trait-slippery} 
+\\~ \myital{\DICE Maneuver Actions}
+
+
+\begin{center}
+\includegraphics{arcana/Liturgies4}
+\end{center}
+
+
+\LITURGY [
+  Name = Mountainhands,
+  Link = arcana-mystery-mountainhands,
+  Paradigm = Empyrean,
+  Duration=2 Maneuver Actions
+]
+
+Your hands enlarge and become stone.  Unarmed Attacks do +\DICE damage (up to a maximum of +4).  In addition, you can reach your hands into substances that might affect Flesh but not stone (fire, boiling water - OK.  Lava or acid - not OK). Your hands must be empty (including rings and gloves) to invoke this Liturgy. This liturgy can only affect two of your arms i.e. it can't be combined with liturgies or spells that give you extra arms.
+
+
+\LITURGY [
+    Name = Pummeling Hands,
+    Link = arcana-mystery-pummeling-hands,
+    Paradigm = Monstrous,
+    Duration=\DICE Maneuvers
+]
+
+For every Faith you Spend, an extra arm sprouts from your torso. The arms can hold things for you, and grant you a +4 on any rolls where extra arms might be useful (climbing, swimming, etc.). Wearing armor is impossible when using this Liturgy.
+
+The arms cannot fight with weapons, but you may fight Unarmed with these extra arms (including the \mypg{Grapple Combat Maneuver}{combat-deeds-grapple} ). Treat each arm as a \FOC weapon that deals \DICE damage when it hits. Each attack must be rolled separately.  You cannot Spend more than 6 Faith when invoking this liturgy.
+
+
+\LITURGY [
+  Name = Rending Strike,
+  Link = arcana-mystery-rending-strike,
+  Paradigm = Ruinous,
+  Duration=1 Maneuver Action
+]
+
+You must be holding a \mylink{Chopping}{gear-weapons} weapon. Spend 1 Faith. For the rest of Combat, any time the weapon deals damage, the victim must roll their Armor \UD two times.
+
+\newpage
+
+
+\LITURGY [
+  Name = Rootshield,
+  Link = arcana-mystery-rootshield,
+  Paradigm = Heathen,
+  Duration=2 Maneuver Actions
+]
+
+Your Faith manifests the very roots of Ygg to defend you. Treat the Rootshield as a \mylink{Shield}{gear-armor} that can be sundered up to \DICE times.
+
+\LITURGY [
+  Name = Sirocco,
+  Link = arcana-mystery-sirocco,
+  Paradigm = Empyrean,
+  Duration=1 Maneuver Action
+]
+
+Roll 1 Faith. You may add the result of this die to any \RO or \RB try you make that uses \DEX (including using \DEX weapons). You can roll multiple times, but each roll you make takes 1 Maneuver Action. If you do not use add the \SUMDICE to an \RO or \RB try before Combat is over, the bonus is lost.
+
+\LITURGY [
+  Name = Trollblood,
+  Link = arcana-mystery-trollblood,
+  Paradigm = J{\UmlautO}tnar,
+  Duration=2 Maneuver Actions
+]
+
+Spend up to 4 Faith. As long as you are not Dying, you regenerate +\DICE Flesh at the bottom of each Moment. If you ever it 0 Flesh and begin Dying, this Liturgy immediately ends. The regeneration is negated if the damage is from an acid or fire source. At the end of Combat, this liturgy immediately ends (before you can take a Breather).
+
+
+\LITURGY [
+  Name = Vaulting Step,
+  Link = arcana-mystery-vaulting-step,
+  Paradigm = Errant,
+  Duration=1 Maneuver Action
+]
+
+Your next \DICE+\DICE strides (about 1m each stride) land on a plane of Force the size of your foot.  The step can be taken in any direction up, down, sideways, or across (though you cannot pass through physical objects).  You can combine these in any way you want - stride 45 degrees into the air, take another step up, and a final step down (for example).  Your final step must be on a solid surface, or you fall.
+
+\LITURGY [
+  Name = Vulpine Wisdom,
+  Link = arcana-mystery-vulpine-wisdom,
+  Paradigm = Cunning,
+  Duration=1 Maneuver Action
+]
+
+Roll 1 Faith. You may add the result of this die to any \RO or \RB try you make that uses \INT (including using \INT weapons). You can roll multiple times, but each roll you make takes 1 Maneuver Action. If you do not use add the \SUMDICE to an \RO or \RB try before Combat is over, the bonus is lost.
+
+\myimage{arcana/Liturgies5}
+
+\LITURGY [
+  Name = Whip of Thorns,
+  Link = arcana-mystery-whip-of-thorns,
+  Paradigm = Heathen,
+  Duration=1 Maneuver Action
+]
+
+A veridian scourge appears in your hand, studded with thorns. The Whip of Thorns is a \FOC Brawl weapon that deals \DICE damage. If the Whip strikes Flesh, the victim must Save or be inflicted with the \effect{Bleeding}.
+
+\LITURGY [
+  Name = Witness Me,
+  Link = arcana-mystery-witness-me,
+  Paradigm = J{\UmlautO}tnar,
+  Duration=1 Maneuver Action
+]
+
+Gain +\DICE on your Attack tries, and deal +\DICE damage if your try succeeds.  At the end of Combat, you immediately catch \effect{the Vapors}, drop to 0 Flesh, and must immediately make a \DEATH try.
+
+
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%  LORESPELLS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mysubsection{Lorespells}{liturgies-lorespells}
+\callout {
+    Incantations of utility and assistance. Lorespells take Minutes to perform, and cannot be used in Combat. Unless otherwise noted, you cannot target yourself with a Lorespell. Each Lorespell is distinct; if a Lorespell is performed again, it replaces the previous version of the same Lorespell.
+}
+
+\LITURGY [
+  Name = Army of the Pharaohs,
+  Link = arcana-mystery-army-pharaohs,
+  Paradigm = Civilized,
+  Duration = Session
+]
+
+Spectral workmen spring into being, ready to do your bidding. They can only perform one of these tasks per invocation of the Lorespell (but it can be invoked multiple times):
+
+\callout{\footnotesize{
+\mybullet {
+    \item If the spirits have access to a forge, they can create \DICE x 1000 spears and shields (any combination) out of earth and stone. The armaments disappear at sunset unless the Lorespell is reinvoked.
+    \item The spirits will fell a tree no larger than \DICE X 5m tall and \DICE meters in diameter. Depending on the number of \DICE, the felled tree is: 1) cut and broadly de-limbed; 2) cut, de-limbed, and debarked; 3) cut, de-limbed, debarked, cut into planks as per your specifications, and stacked; 4) cut, planed, de-limbed, debarked, cut into planks, stacked, sanded, and finished.
+    \item The spirits clear \DICE x 7m of earth from a trench. You may divvy these \DICE up among length, width, and height as you wish (for instance, a 1 \DICE trench might be 5m x 1m x 1m, or 3m x 2m x 2m, etc).
+    \item The spirits bless up \DICE Flasks of Oil, Personal Provisions, Quivers of Arrows/Bolts, Torches, or Narcotics. For the rest of the Session, these blessed items do not need to roll their \UD when utilized. See the sections on \mylink{Tools of the Trade}{gear-equipment} and \mylink{Narcotics}{gear-narcotics} under \mypg{Gear}{gear} for more details.
+}}}
+
+\cbreak
+
+\LITURGY [
+  Name = Capture Wind,
+  Link = arcana-mystery-capture-wind,
+  Paradigm = Errant,
+  Duration = Session
+]
+
+A circle \DICE meters in radius extends from your fingertips in front of you. As long as you maintain \mylink{Concentration}{time-concentration}, you can absorb any wind passing through the circle. 
+
+The wind is stored inside of the circle, similar to \mylink{Hammerspace}{meta-hammerspace}. At any time during the Session, you can reactivate the circle to release the wind you absorbed.  The wind flows out at the same rate it entered. If you activate this Lorespell in a light breeze for 5 minutes, it will release a light breeze over 5 minutes. The wind only flows from the circle, so anyone standing behind it is not affected (unless you release hurricane-force winds indoors). 
+
+The circle disappears (taking the wind with it) at your command, if you ever go to 0 Flesh, or at the end of the Session.
+
+\LITURGY [
+  Name = Clearwater,
+  Link = arcana-mystery-clearwater,
+  Paradigm = Heathen,
+  Duration = Session
+]
+
+You create \DICE draughts of cold, clear water. When drunk by Mortals, the Clearwater restores +4 Grit (even above \MAX). When drunk by Unseelie, treat as a \mylink{Noxious (d6)}{malignants-toxins} Toxin. The draughts must be drunk before the end of the Session, or they revert to regular (though very clean) water. You are unable to drink Clearwater you have created.
+
+\LITURGY [
+  Name = Dirge,
+  Link = arcana-mystery-dirge,
+  Paradigm = J{\UmlautO}tnar,
+  Duration = Session
+]
+
+Up to \DICE Allies who have died (failed their \mylink{Death try}{combat-dying}) can attempt one final Death try. The Ally must have died this Session and their corpse must be Close by. If the Ally should roll and survive, it turns out they were just "mostly dead" - they return with 1 Flesh, and must make an immediate \mylink{Injury}{adventurer-kismet-injury} try. The Ally must also immediately roll on the \mypg{Greater Curse}{table-greater-curses} table (cheating death has its costs). The Dirge won't help anyone with an ... extreme ... death (burned to a crisp, beheaded, etc.) at the Arbiter's discretion.
+
+
+
+\LITURGY [
+  Name = Fortifying Blaze,
+  Link = arcana-mystery-fortifying-blaze,
+  Paradigm = Righteous,
+  Duration = Bivouac
+]
+
+Up to \DICE Allies (but not yourself) can step into the flames of a Fortifying Blaze. The Ally immediately takes 1 damage to Flesh but no further damage. They must remain in the Fortifying Blaze for Minutes to gain any benefit; during this time they cannot lie, and must answer truthfully any question asked of them.  After the duration has expired, they may choose one of the following benefits for the remainder of the Session:
+
+\callout{\footnotesize{
+\mynumlist {
+    \item Gain +2 to any damage rolls;
+    \item Gain +4 to all Saves;
+    \item Gain +4 on all Skill tries;
+    \item Only fail a \DEATH try on a 1 (instead of a 1 or 2);
+    \item Only fail an \INSANITY try on a 1 (instead of a 1 or 2);
+    \item Only fail an \INJURY try on a 1 (instead of a 1 or 2).
+}}}
+
+Fortifying Blaze requires a campfire, and cannot be used at the same time as \mylink{Hearthfire}{arcana-mystery-hearthfire}.
+
+
+\LITURGY [
+  Name = Giantform,
+  Link = arcana-mystery-giantform,
+  Paradigm = J{\UmlautO}tnar,
+  Duration = Session
+]
+
+A bipedal Ally or Monster who is Close or Nearby to you grows \DICE x 500cm in height, with strength to match. Unarmed Attacks do an extra point of damage for every 2 \DICE you spend, and the target can lift an additional \DICE x100kg. If the creature is wearing Armor when Giantform is invoked, the creature must immediately roll that Armor's \UD. The creature must take the result in damage to Flesh, and the armor is ruined (drops to 0 \MAX \UD).  "Normal" sized weapons are unusable in Giantform. The Giantform lasts for the Session, or until you dispel it.
+
+\LITURGY [
+  Name = Hearthfire,
+  Link = arcana-mystery-hearthfire,
+  Paradigm = Heathen,
+  Duration = Bivouac
+]
+
+During a \mylink{Bivouac}{combat-resting}, you imbue your campfire with healing properties. The Hearthfire will prevent any \mylink{Wandering Monsters}{arbiter-monsters-wandering} from attacking your camp. Up to \DICE Allies (but not yourself) may gain up to \DICE benefits; each person can pick their own benefit, but they can only pick each benefit once.  The healing is \mybold{in addition} to the effect of taking the Bivouac as normal.
+
+\callout{\footnotesize{
+\mybullet {
+    \item Restore 1 Flesh.
+    \item Restore 1 \UD of your \mylink{Armor}{gear-armor}, up to its \MAX.
+    \item Restore \DCUP of any \myital{one} aspect of your \mylink{Personality}{adventurer-personality}.
+    \item Restore \DCUP of your \mylink{Prowess}{sellsword-prowess}.
+    \item Restore \DCUP of your Lucky Die (\mylink{Knave}{knave-lucky-die} or \mylink{Pooka}{pooka-lucky-die}).
+    \item Restore \DCUP of your \mylink{Juju}{cruces-mojo-juju}.
+    \item Restore \DCUP of your \mylink{Ingenuity}{cruces-knowledge-ingenuity}.
+    \item Restore 2 \mylink{Blood Dice}{cruces-blood-dice}.
+    \item Restore your \mylink{Grace Die}{vulgate-sacraments-grace}.
+}}}
+
+Note that "up to \MAX" is implied in all of the above. Hearthfire requires a campfire, and cannot be used at the same time as \mylink{Fortifying Blaze}{arcana-mystery-fortifying-blaze}.
+
+\LITURGY [
+  Name = Lay Assistance,
+  Link = arcana-mystery-lay-assistance,
+  Paradigm = Civilized,
+  Duration = See Below
+]
+
+Choose one of the following effects:
+
+\mybold{Banker:}  Convert up to \SUMDICE kg of coins into coins of another type of equivalent value (reminder that there are 100 coins in a kg, and 4 kg of coins are 1 Burden). For example, if the \SUMDICE of your dice roll was 10 you could convert 1,000 iron pieces (10kg) into 100 silver pieces (1kg) or 10 gold pieces (1/10kg); or you could convert 10 gold pieces into 100 silver pieces or 1,000 iron pieces. 
+
+\mybold{Collector of Alms:} During the \mylink{Shopping Step}{downtime-shopping} of \mylink{Downtime}{downtime}, you can convert Faith directly into coin.  Roll \DICE Faith.  For every 2 you get, gain 50\FE (and lose the die); for every 3 you get, gain 10\AG; for every 4 you get, gain 2\AU. Any unused money disappears at the end of the \mylink{Shopping Step}{downtime-shopping}
+
+\mybold{Exchequer:} Place up to \DICE X100kg of coins into \mylink{Hammerspace}{meta-hammerspace} for an indefinite period of time; the coins essentially cease to exist, have no Burden, and cannot be stolen or taken by others (though the existence of the coins can be divined through \mylink{Scrying}{occultism-descry}).  You can retrieve the coins at any time (though you have to retrieve all of them at once).  The coins are also released upon your death, meaning that you might occasionally be a target of thieves. You can combine the effects above (so you could convert money and store it in Hammerspace if you'd like).  You must invoke this liturgy each time you want to put more coins into Hammerspace, but everything that's in Hammerspace is released either when you will it, or upon your death.
+
+\mybold{Stevedore:} Up to \DICE X250kg of nonliving objects, as you designate, are packed neatly. You must name the objects or their general category when you invoke this liturgy ("those coins", "the contents of that room") If no packing materials are provided, the objects will be stacked into compact cubes, with the largest and most stable objects at the bottom. If chests, paper and twine, sacks, carts, etc. are provided, the are used as you direct. The packages created will take up the minimum space possible, and will be remarkably sturdy. Objects will continue to be packed as long as you maintain \mylink{Concentration}{time-concentration}. The objects must be able to move freely (you wouldn't be able to pack the clothes someone was wearing, for instance) and will not move higher than 3m off the ground during the packing process. 
+
+\cbreak
+
+\myimage{arcana/Liturgies6}
+
+\LITURGY [
+  Name = Memory Lane,
+  Link = arcana-mystery-memory-lane,
+  Paradigm = Cunning,
+  Duration = See Below
+]
+
+You can create a memory (real or not) and embed it in the head(s) of up to \DICE creatures by touch.  Unwilling creatures may Save to negate the effect of this Lorespell.  The memory must be short and distinct.  The memory will start to fade in a few days, but if you win an \RBTRY{\FOC}{\FOC} try against the victim with a +\DICE modifier, the memory will never fade (even if they were to lose all other memory). 
+
+
+\LITURGY [
+  Name = Mermaid's Breath,
+  Link = arcana-mystery-mermaids-breath,
+  Paradigm = Cthonic,
+  Duration = Session
+]
+
+For \SUMDICE Minutes, up to \DICE Allies can breathe water as if it were air.  They can only breathe water, however - breathing air will cause them to drown. You can end this Lorespell at will.
+
+\newpage
+
+\LITURGY [
+  Name = Mirage,
+  Link = arcana-mystery-mirage,
+  Paradigm = Cunning,
+  Duration = Session
+]
+
+You create a convincing illusion to fool your foes. This Liturgy works exactly as the Wizardry Secret \mylink{Illusion}{secrets-illusion}. You can end this illusion at will.
+
+
+\LITURGY [
+  Name = Noontide,
+  Link = arcana-mystery-noontide,
+  Paradigm = Empyrean,
+  Duration = Session
+]
+
+You raise your hands to the heavens and fire a flare up to 50m upwards, where it hovers providing bright sunlight to all areas Close, Nearby, and Far-Away.  You can command the sunburst to change color, move horizontally, or explode.  No shadows can be cast beneath the sunlight (meaning sneaking around is difficult if not impossible), and all invisible creatures and objects appear with a thin halo around them the color of the sun.  Anyone who performs the sacrament Curse the Unhallowed while under the Noontide adds an additional +\DICE to their damage; any \mylink{Unhallowed}{monster-trait-unhallowed} Monster or Ally that is Nearby the sunburst (within 10m) when it explodes takes \SUMDICE+\DICE damage, Save for half.
+
+\LITURGY [
+  Name = Plague,
+  Link = arcana-mystery-plague,
+  Paradigm = Ruinous,
+  Duration = Session
+]
+
+A slow-moving pestilential cloud spews forth from your mouth, moving for as long as you \mylink{Concentrate}{time-concentration} and covering an area roughly the size of a \mylink{Tiny}{civilization-settlements} settlement (\LT 1,000 people). There is a \DICE-in-6 chance that the cloud will cause a random \mylink{Disease}{vulgate-medicine-diseases} in \DICE x 5 people. The disease is extremely contagious to any who come in contact with the infected. The cloud will not move against heavy winds. If a \mylink{Pooka}{species-pooka} is in the town, this Liturgy has no effect.
+
+
+\cbreak
+
+\LITURGY [
+  Name = Rainburst,
+  Link = arcana-mystery-rainburst,
+  Paradigm = Heathen,
+  Duration = Session
+]
+
+You create a heavy rainstorm in the surrounding area (inside or outside) that lasts for \SUMDICE real-world minutes.  The rain immediately extinguishes all fires (even magical ones) for the duration and prevents non-magical fires from starting. The total range of the rainburst is dependent on the number of \DICE invested: 1) covers an area Close; 2) covers an area Close and Nearby; 3) Close, Nearby, and Far-Away; 4) Close, Nearby, Far-Away, and Distant. Note that the area may flood if there is no drainage.
+
+\LITURGY [
+  Name = Satanic Verses,
+  Link = arcana-mystery-satanic-verses,
+  Paradigm = Righteous,
+  Duration = Instant
+]
+
+At your pronouncement, books, scrolls, and parchments burst into flame.  You can affect all writing in a \DICE meter radius centering on you.  If a Grimoire or Fetish is in possession of another (that is, on their person):
+
+\mybullet {
+    \item the Grimoire will not catch fire if the owner can \RBTRY{\INT}{your \FOC}.  They gain a bonus modifier for every spell in the Grimoire, but a -\DICE penalty on their try.
+    \item the Fetish will not catch fire if the owner can \RBTRY{\INT}{your \FOC}.  They may add the Fetish's \UD to their roll (and if they roll a 1 or a 2, the \UD moves \DCDOWN), but take a -\DICE penalty.
+}
+
+If the Grimoire or Fetish is not in a persons' possession at the time the mystery is invoked, it does not get a Save.
+
+\mylink{Sigils}{research-inscription-sigils} will similarly catch aflame if the Arbiter is unable to \RB vs. your \FOC using a d10 (Minor), d16 (Major), or d24 (Primary) with a -\DICE penalty.
+
+Tattoos or spells written in the heads of Philosophers are unaffected.  This Lorespell is indiscriminate in what writing it will set alight.
+
+
+\LITURGY [
+  Name = Shatter Bonds,
+  Link = arcana-mystery-shatter-bonds,
+  Paradigm = Errant,
+  Duration = Instant
+]
+
+By invoking this mystery, you can sunder up to \DICE+\DICE bonds either Close or Nearby.  The bonds may be physical (shackles, chains, or locks) or mental (Charm, Command, Labyrinth, etc) at the Arbiter's discretion. You are unable to shatter your own bonds.
+
+\LITURGY [
+  Name = Sound the Deeps,
+  Link = arcana-mystery-sound-the-deeps,
+  Paradigm =  Cthonic,
+  Duration = Instant
+]
+
+You slap your hand on the ground or the surface of the water.  The echoes of the tremor allow you to precisely know how deep and the approximate shape of bodies of water, chasms, shafts, clefts, mountain peaks, caverns, passages, etc. up to a distance of \DICE x100m meters. The tremor is not enough to stun or harm any creatures beneath the surface of the ground or water, but they will definitely "hear" it.
+
+\LITURGY [
+  Name = Tasty,
+  Link = arcana-mystery-tasty,
+  Paradigm = Monstrous,
+  Duration = Session
+]
+
+The target object or Monster (alive or dead) smells delicious for the spell's duration.  The smell radiates Nearby in calm air, but can spread on the wind, or leave a trail.  Non-intelligent zoological creatures and swarms will be attracted to and attempt to eat the object or Monster first (even if they are supposed to be allies); intelligent creatures get a Save at a -\DICE penalty. 
+
+\cbreak
+
+
+\LITURGY [
+  Name = Tattered Robe,
+  Link = arcana-mystery-tattered-robe,
+  Paradigm = Monstrous,
+  Duration = Session
+]
+
+A saffron-hued robe appears, ending in \DICE x10 tatters.  Each tatter is prehensile and can hold a small object weighing up to 5kg. The Robe can obey simple two word commands ("Hold this", "Stay there", "Go back", etc.) and will follow you wherever you go.
+
+\LITURGY [
+  Name = Wall of Gloom,
+  Link = arcana-mystery-wall-of-gloom,
+  Paradigm = Ruinous,
+  Duration = Session
+]
+
+You can anchor a barrier of pure darkness between three or more solid points up to \DICE meters in radius (for example: the 4 points of a door, two trees and the ground, across a hallway, etc).  Monsters that touch the blackness must immediately make a morale check with a -\DICE penalty or become Afraid for the duration of the Lorespell. The \Duration depends on the number of Faith spent.  If you spend 3 or more Faith, creatures that make their morale check that then continue through the wall must make a second Save; if they fail, they exit the wall the same way they came in, and they will need to make a morale check again to touch the wall if they wish to try to move through it once more.
+
+\myimage{arcana/Rosary}
+
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% ORISONS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mysubsection{Orisons}{liturgies-orisons}
+
+\callout {
+    Benedictions for confederates and maledictions for enemies. Your Orisons cannot affect you (for weal or woe); they must always target another. Orisons can only be invoked in Combat, and require 1 Combat Action to perform. Each Orison is unique; if an Orison is reinvoked, it will overwrite the previous iteration of that Orison unless specified otherwise. Orisons last until the end of Combat.
+}
+
+\LITURGY [
+  Name = Bastion,
+  Link = arcana-mystery-aura-protection,
+  Paradigm = Civilized,
+  Duration=1 Combat Action
+]
+
+Up to \DICE Close Allies gain an additional \UDD{d4} of magical armor. Roll this d4 \myital{after} your \mylink{Grit}{adventurer-flesh-grit} is exhausted, but \myital{before} you roll your Armor \UD. The die is lost if the Ally moves further than Nearby from you.
+
+\LITURGY [
+  Name = Dervish,
+  Link = arcana-mystery-dervish,
+  Paradigm = Empyrean,
+  Duration=1 Combat Action
+]
+
+Your Allies become as the whirling winds of a cyclone. Up to \DICE Close or Nearby Allies can take \myital{two} Combat Maneuvers for the rest of Combat, 
+and automatically win \mylink{Init}{combat-init} (no need to roll).  This Orison cannot be "stacked" (that is, performing this Orison for an Ally twice does not grant them the ability to strike 4 times a round!)
+
+\LITURGY [
+  Name = Divine Inspiration,
+  Link = arcana-mystery-divine-inspiration,
+  Paradigm = Cunning,
+  Duration=1 Combat Action
+]
+
+Your Orison clears the mind of an Ally. Roll up to 3 \DICE and add \SUMDICE to any Ally's next \INT or \FOC try. You must declare who you are bestowing the Liturgy upon before you roll.
+
+\LITURGY [
+  Name = Elemental Spray,
+  Link = arcana-mystery-elemental-spray,
+  Paradigm = Heathen,
+  Duration=1 Combat Action
+]
+
+You emit \DICE sprays of elements from your fingertips that you can split among \DICE Monsters.  For each Monster, if the \SUMDICE of the \DICE targeting the Monster is greater than the Monster's \HD, they take \DICE+\DICE fire damage.  If the \SUMDICE is twice the Monster's \HD or more, they also take \DICE+\DICE cold damage.  If the \SUMDICE is three times the Monster's \HD or more, they also take \DICE+\DICE lightning damage.  If the \SUMDICE is four times the Monster's \HD or more, they also take \DICE+\DICE acid damage.  Save for half.
+
+\LITURGY [
+  Name = Fade,
+  Link = arcana-mystery-fade,
+  Paradigm = Cthonic,
+  Duration=1 Combat Action
+]
+
+You can cause an Ally, Monster, or object to fade out of existence.  You can still see them, though they're insubstantial (like a ghost).  The target can't move, talk, or interact with the world in any way.  Not even magic can affect the target.  If the target is unwilling, it gets a Save to negate.  The \Duration depends on the number of Faith invested.
+
+\LITURGY [
+  Name = Feline Ease,
+  Link = arcana-mystery-feline-ease,
+  Paradigm = Monstrous,
+  Duration=1 Combat Action
+]
+
+Kitty power. Up to \DICE Close or Nearby Allies take on the following feline aspects: they can see in the dark (even magical darkness), gain a +4 on any \RO or \RB tries that involve \DEX, and take no damage if they fall 10m or less (though they take damage as normal if they fall further than 10m - see the section on \mylink{Falling}{movement-falling} under \mylink{Exertions}{movement-exertions} for more info).
+
+\newpage
+
+\LITURGY [
+  Name = Gaze of the Void,
+  Link = arcana-mystery-gaze-of-the-void,
+  Paradigm = Ruinous,
+  Duration=1 Combat Action
+]
+
+You unmake a single Monster Close or Nearby; they disintegrate into nothingness unless they make a Save. The number of \DICE invested in the Orison must be twice the Monster's \HD + 1 (for example, to disintegrate a 1 \HD creature, you must invest 3 \DICE (1x2+1), a 2 \HD requires 5 \DICE, etc.) Monsters get a +2 to their Save; magical objects and magical monsters (dragons, unicorns, etc) get a +4 to their Save.
+
+\LITURGY [
+  Name = Hand of God,
+  Link = arcana-mystery-hand-of-god,
+  Paradigm = Errant,
+  Duration=1 Combat Action
+]
+
+Your Orison guides the hand of an Ally. Roll up to 2 \DICE and add \SUMDICE to any Ally's next \VIG or \DEX try. You must declare who you are bestowing the Liturgy upon before you roll.
+
+\myimage{arcana/HandOfGod}
+
+\cbreak
+
+\LITURGY [
+  Name = Lightning,
+  Link = arcana-mystery-lightning,
+  Paradigm = Empyrean,
+  Duration=1 Combat Action
+]
+
+Forks of lightning erupt from your forehead, striking a Close or Nearby Monster for \SUMDICE+\DICE damage (Save for half). You can cause the lightning to "jump" up to \DICE-1 times to another Monster or object Close by, provided they are conductive (iron armor, metal ladders, etc).  Magic swords aren't conductive.  You can "ping-pong" between two objects if you desire. Creatures struck by a secondary (or greater) lightning bolt take \DICE damage (no Save). 
+
+\LITURGY [
+  Name = On Your Feet,
+  Link = arcana-mystery-on-your-feet,
+  Paradigm = Errant,
+  Duration=1 Combat Action
+]
+
+You cry to your Small God to release the faithful from bondage. \DICE Close or Nearby Allies immediately succeed on their next \Duration try.
+
+\LITURGY [
+  Name = Pestilential Breath,
+  Link = arcana-mystery-pestilential-breath,
+  Paradigm = Civilized,
+  Duration=1 Combat Action
+]
+
+You breathe out the stench of a thousand sewers. Up to \DICE Close or Nearby Monsters must Save or gain \effect{Sickened} (unless they are immune, see the section on \mylink{Monster Traits}{monster-traits}).
+
+\LITURGY [
+  Name = Poison Spittle,
+  Link = arcana-mystery-poison-spittle,
+  Paradigm = Monstrous,
+  Duration=1 Combat Action
+]
+
+Spend 1 Faith. You spit a gob of poison sputum at a Close or Nearby Monster. The victim must Save or be affected by a \mylink{Noxious (d6)}{malignants-toxins} Toxin (unless they are immune, see the section on \mylink{Monster Traits}{monster-traits}).
+
+\LITURGY [
+  Name = Prayer for the Dying,
+  Link = arcana-mystery-prayer-dying,
+  Paradigm = J{\UmlautO}tnar,
+  Duration=1 Combat Action
+]
+
+Spend \DICE Faith to allow \DICE Allies to automatically make their next \DEATH try (no need to roll). The Allies must be \mylink{Dying}{combat-dying} to receive this Orison. Prayer for the Dying ends if it is used, the Ally is healed above 0 Flesh, or at the end of Combat. 
+
+\LITURGY [
+  Name = Ray of Fire,
+  Link = arcana-mystery-ray-of-fire,
+  Paradigm = J{\UmlautO}tnar,
+  Duration=1 Combat Action
+]
+
+A narrow beam of fire shoots from your outstretched finger.  Make a Attack try using your \FOC with a +\DICE modifier (up to +4); if you hit and the target fails a \SAVE{Hexes}, the target becomes \effect{Enflamed}. The fire is normal (not magical) but cannot be put out alone, and  will continue burning for the duration if no one assists. The \Duration depends on the \DICE of Faith spent. The beam of fire will also light flammable things alight.
+
+\LITURGY [
+  Name = Resonating Command,
+  Link = arcana-mystery-resonating-command,
+  Paradigm = Righteous,
+  Duration=1 Combat Action
+]
+
+You shout a one word command at up to \DICE Close or Nearby Monster(s), who must obey (Save negates).  The Monster(s) must be able to understand your language.  The command resonates for the duration; the \Duration depends on the \DICE of Faith spent.  Each \Duration try prompts an additional Save to disobey the command; any failed Save forces the target to obey. Each Moment after the first the target(s) gain an additional +1 to their Save.  The command cannot directly cause the target(s) harm or force them to commit a harmful action.  You could cause them to run into a trap they didn't know was there, or into a tactically disadvantageous position, but not off a cliff. This Orison will not affect Monsters that are immune to the \mylink{Secrets of the Mind}{monster-traits}.
+
+\LITURGY [
+  Name = Scourge of Chaos,
+  Link = arcana-mystery-scourge-of-chaos,
+  Paradigm = Righteous,
+  Duration=1 Combat Action
+]
+
+You may use your Faith to invoke the \mylink{Sacrament: Curse the Unhallowed}{vulgate-sacrament-curse-the-unhallowed}.
+
+\LITURGY [
+  Name = Spook,
+  Link = arcana-mystery-spook,
+  Paradigm = Cunning,
+  Duration=1 Combat Action
+]
+
+\DICE Monsters must immediately make a \mylink{Morale}{monster-morale} check. If the Monster does not have "morale" (a fellow Ally, say) they must instead make a \SAVE{Hexes} or gain \effect{Afraid}. This Orison will not affect Monsters that are immune to the \mylink{Secrets of the Mind}{monster-traits}.
+
+\LITURGY [
+  Name = Sporous Vapor,
+  Link = arcana-mystery-sporous-vapor,
+  Paradigm = Heathen,
+  Duration=1 Combat Action
+]
+
+You breathe a cloud of mushroom spores into an area Nearby.  All Allies and Monsters are affected by the Sporous Breath unless they make their Save; Only yourself and \mylink{Pooka}{species-pooka} are immune.  The effects depend on the number of \DICE used: 1) all targets suffer \effect{Anathema}; 2-3) all targets are \effect{Woozy}; 4-5) all targets are \effect{Befuddled}; 6+) all targets are affected with a \mylink{Noxious (d6)}{malignants-toxins} Toxin. The vapor will hang heavily in the air for a \Duration, depending on the number of Faith spent.
+
+\newpage
+
+\LITURGY [
+  Name = Vile Hunger,
+  Link = arcana-mystery-vile-hunger,
+  Paradigm = Ruinous,
+  Duration=1 Combat Action
+]
+
+Up to \DICE Monsters must Save or immediately stop what they're doing to cannibalize any corpses around them. The \Duration depends on the number of Faith spent. Any Adventurers (except you) who witness this gruesome display must make an \INSANITY try. Requires there to be corpses present.
+
+\myimage{arcana/Moonscape}
+
+\cbreak
+
+\LITURGY [
+  Name = Wyrmbreath,
+  Link = arcana-mystery-wyrmbreath,
+  Paradigm = Cthonic,
+  Duration=1 Combat Action
+]
+
+You breathe out a gout of dragon's breath before you.  The breath deals \SUMDICE+\DICE damage to all Allies and Monsters Nearby. Save for half damage, plus roll a d6:
+
+\callout{\footnotesize{
+\mybullet {
+  \item \mybold{1. Red:}   Fire.  The Monsters or Allies catch fire if they fail their Save, and gain \effect{Enflamed}.
+  \item \mybold{2. Black:}  Acid.  Treat as an \mylink{Acid}{malignants-acids} that deals d4 damage for d4 Moments if it hits Flesh.
+  \item \mybold{3. White:}  Frost.  The Monsters or Allies are inflicted with \effect{Prone}.
+  \item \mybold{4. Blue:}  Lightning.  The Monsters or Allies take an additional 2 points of damage per die if they are holding or wearing anything conductive (Save negates).
+  \item \mybold{5. Green:}  Corrosive gas.  The Monsters or Allies must roll their Armor \UD x \DICE times.
+  \item \mybold{6. Bone:}  Void.  The Monsters or Allies catch \effect{the Vapors} for \DUR{d4}.
+}}}
+

@@ -1,0 +1,87 @@
+\end{multicols*}
+
+\mysection{Wizardry}{arcana-wizardry}
+
+\flavor{\myital{Klaatu barada nikto!} \\~ \Tilde "The Day the Earth Stood Still" / "Army of Darkness"}
+
+    The Arcana of Wizardry allows you to perform \mylink{the Secrets}{arcana-wizardry-secrets} by using your \mylink{Blood Die}{cruces-blood-dice}. You can't spend your Blood Dice if there is too much iron nearby (see the section on the \mypg{Crux of Blood}{cruces-blood}). You must declare how many Blood Dice you are rolling before you invoke a Secret. If a Blood Die comes up a Failure (a 1 or a 2), it is immediately \mylink{Spent}{dice-spent}. How many Blood Die you roll is up to you - the more dice you roll, the more powerful the effect, but the higher the chance of catastrophe if you roll any triples, quadruples, or more.
+
+Speaking a Secret inscribed in your cranium is a \mypg{Combat Action}{combat-combat-actions} that may take up to two Maneuver Actions to "prepare", depending on where the Secret is inscribed:
+
+    \mybullet {
+        \item If the Secret is inscribed on the inside of your skull (see below), it requires no Maneuvers to prepare;
+        \item If the Secret is inscribed on a \mylink{Fetish}{fetishes}, it requires \mybold{1 Maneuver Action} to prepare; 
+        \item If the Secret is inscribed in a \mylink{Grimoire}{grimoires}, it requires \mybold{2 Maneuver Actions} to find the right page (not including the time it takes to get it out of your bag) and speak the Secret. 
+    }
+
+    See the \mylink{Inscription}{research-inscription} section under \mylink{Research}{research} for more info about Fetishes and Grimoires.
+
+\vspace{20mm}
+
+\begin{multicols*}{2}
+
+\mysubsection{The Sorcerer's Skull}{arcana-wizardry-skull}
+
+Secrets inscribed in your skull can be spoken at any time - you simply "know" them, as you know your own name.
+
+If you separate the skull from the Sorcerer and carefully scrape away the brains, you may use it as an extremely potent \mybold{Fetish} - one that doesn't have a \UD attached to it (meaning it doesn't lose potency with repeated use!). You cannot inscribe Secrets from a skull into a Grimoire or Fetish without removing the brain first.
+
+
+\cbreak
+
+
+\myimage{arcana/MushroomSkull}
+
+
+
+\newpage
+
+\end{multicols*}
+\mysubsection{Components}{arcana-wizardry-components}
+
+\flavor{I collect molds, spores, and fungus.  \\~ \Tilde Egon Spengler, "Ghostbusters"}
+
+Eye of newt, toe of frog, etc. By collecting various ... uh, parts ... you might come across, you can augment your Secrets and make them easier to perform. Secrets require blood to perform "correctly", so these Components must come from a (once) living thing - often a Monster.
+
+\mybold{If you invoke a Secret with a Component, you only Spend a Blood die if you roll a 1 (instead of a 1 or 2)}.  Components are Insignificant items. When the Component is Spent, it's consumed in a puff of smoke / blue flame / swarm of gnats etc.
+
+Components can only be harvested from fresh corpses during a \mylink{Breather}{combat-resting-breather}. It has to be something you can reasonably carry (Arbiter's choice) - basilisk tongue, OK.  Green slime, not OK. 
+
+Make an \RSTRY{\INT}. If you Fail, nothing happens. If you succeed, you gain one \UDD{d4} of a Component.
+
+What the component might be is up to you. You could declare that "kobold's eyes" are the Component for the \mylink{Secret: Sleep}{secrets-sleep}, and if you succeed in your \RS try, then kobold's eyes are always a component for Sleep (note it on your Adventurer sheet). This is only true for \mybold{you} and not anyone else (someone else's version of Sleep needs boggart boogers or whatever). Only one Component can augment a Secret - if you decide that kobold's eyes are the Component for Sleep, then \myital{only} kobold's eyes can be used with Sleep.
+
+When harvesting, Monsters will only provide one component. You can't say kobold's eyes help Secret: Magic Missile and kobold's tongues help cast Secret: Battering Beam. You can also only harvest once per distinct Monster - so if you kill 9 kobolds and 14 trolls then you only get two tries - once for kobolds, and once for trolls.  No matter how many Monsters there are, you can only harvest one distinct \UDD{d4} of material from your each of your "donors".
+
+
+\begin{multicols*}{2}
+
+\crunch{Wizard Fight!}{arcana-wizardry-wizard-fight}
+
+Some Secrets can be countered by other Secrets - for example, \mypg{Balthazar's Breathtaking Blast}{secrets-balthazars-breathtaking-blast} can be countered by \mypg{Mighty Lungs}{secrets-mighty-lungs}, and \mylink{Invisibility}{secrets-invisibility} can be dispelled by the wisps summoned in the \mylink{Fool's Fire}{secrets-fools-fire}.
+
+
+If you attempt to counter a Secret and the Philosopher who cast it is not present (that is, not somewhere Close, Nearby, Far-Away, or Distant) you automatically succeed.  Otherwise, you enter into a duel with the other Philosopher.
+
+Each Philosopher must \RBTRY{\INT}{\INT}, adding the number of \DICE invested in the Secret as a positive modifier.
+
+\formula{Wizard Fight!}{
+  \RB : \INT ~ \PLUS ~ \DICE
+}
+
+The winner's Secret stays, the loser's Secret goes.  Put another way:
+
+\callout {\footnotesize{
+\mybullet{
+  \item If you are countering a Secret and you win, the Secret you're attempting to counter is dispelled and your Secret takes effect
+  \item If you are countering a Secret and you lose, the Secret you're attempting to counter remains, and your Secret fizzles with no effect.
+}}}
+
+If you attempt to counter a Secret and you roll a \mylink{Calamity}{table-calamities} or \mylink{Ruin}{table-ruin}, the counterspell doesn't work.
+
+
+\newpage
+
+\end{multicols}
+\input{arcana/wizardry_secrets.tex}
+\begin{multicols}{2}

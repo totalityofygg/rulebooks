@@ -1,0 +1,180 @@
+\mysection{Dice}{game-dice}
+
+\mysubsection{The Dice Chain}{dice-chain}
+
+\ed{To the best of my knowledge, the Dice Chain is a mechanic invented by Joseph Goodman.}
+
+
+In addition to this rulebook, each Adventurer should have 10 different dice: the d24, d20, d16, d12, d10, d8, d6, d4, d3, and a d2 (flipping a coin). If you dumped out all the dice in your Crown Royal bag and put them in order from lowest to highest (d2, d3, d4, etc), you'd have a \mybold{Dice Chain}: each die is connected to two other dice - 1 higher and 1 lower (the exceptions being d2 and d24, of course) in a big chain. 
+
+\formula {Dice Chain} {
+  d2 \DubArrw d3 \DubArrw d4 \DubArrw d6 \DubArrw d8 \DubArrw d10 \DubArrw d12 \DubArrw d16 \DubArrw d20 \DubArrw d24
+}
+
+\mybullet {%
+  \item When you see \DCUP written in the rules, switch your die for the next \mybold{highest} die in the chain (so from a d6 to a d8).
+  \item When you see \DCDOWN written in the rules, switch your die for the next \mybold{lowest} die in the chain (so from a d6 to a d4).  
+}
+
+\cbreak
+
+\mysubsection{Rolling Dice}{dice-rolling-dice}
+
+An unrolled die is a lifeless piece of plastic; only spinning them across the kitchen table imbues them with hope and magic.
+
+\callout {
+    \mybullet {
+        \item \mybold{\myanchor{Bump}{dice-bump}}: "Bumping" a roll means adding additional modifiers to the result. For example, you can Bump a \VIG try by rolling your \PRE. See \mypg{Personality}{adventurer-personality}.
+        \item \mybold{\myanchor{Failure}{dice-failure}}:  If you roll a \mybold{Natural} 1 or 2 on a die, it's a Failure. The consequences of Failure will be listed in the description (otherwise, there's no effect).
+        \item \mybold{\myanchor{Natural}{dice-natural}}: The number appearing on the die after the roll, without modification.
+        \item \mybold{\myanchor{Nudge}{dice-nudge}}: A \mybold{Nudged} die is moved to a different adjacent face. For example, if you rolled a d6 and got a 6, you could move the die to a 2,3,4,or 5 - but not a 1. Only certain powerful effects allow you to \mybold{Nudge} a roll.
+        \item \mybold{\myanchor{Restore(d)}{dice-restore}}: a \mybold{Spent} die that can now be used.
+        \item \mybold{\myanchor{Spend / Spent}{dice-spent}}: if you \mybold{Spend} a die, or if a die is \mybold{Spent}, it can't be used anymore. 
+        \item \mybold{\myanchor{Try}{dice-try}}: Synonym for roll i.e. if you were to make a "d6 try", you would roll a d6. There are 3 basic types of Tries in the ToY, described below.
+    }
+}
+
+\newpage 
+
+\end{multicols*}
+\mysubsection{Types of Dice}{dice-types}
+
+
+\begin{center}
+\myemph{A Failure is a Natural 1 or 2 on a die}
+
+  \mytable{Y l | l} {
+  } {
+    \POOL & Power Dice &  On a Failure, the die is Spent.   \\
+    \UD & Resource Dice & On a Failure, the die moves \DCDOWN. \\
+    \Duration & Duration Dice & On a Failure, the die is Spent. Otherwise it moves \DCDOWN. \\
+  }
+\end{center}
+
+
+
+
+\begin{multicols*}{2}\raggedcolumns
+
+\myhighlight{Power Dice}{dice-power}  \POOL
+
+Power Dice are one or more dice of the same type. If you roll a Failure with a Power Die, it becomes \mybold{Spent}. \mypg{Blood}{cruces-blood} and \mypg{Faith}{cruces-faith} are Power dice.
+
+\example{Randy the Magnificent has 4 Blood Dice, and decides to use 3 of them to perform the \mypg{Secret of Charm}{secrets-charm}. He rolls a 1, 2, and a 4. He resolves the effects of the spell, then puts the two dice he rolled Failures on to the side. He'll get these back after he rests - in the meantime, he has 2 Blood Dice to use.}
+
+\myimage{game/DiceDesign}
+
+\cbreak
+
+\myhighlight{Duration Dice}{dice-duration}  \Duration
+
+Duration Dice are used to measure how long an effect lasts during \mypg{Combat}{combat}. Duration and time obviously go hand-in-hand; see the next section on \mybold{Time} for more information.
+
+You'll see a Duration Die written like \DUR{d4}, which tells you which die the duration starts on. At the \mybold{Bottom of the Moment}, make a try:
+
+\mybullet {
+    \item If you roll a Failure, the effect immediately ends and the die is \mybold{Spent}.
+    \item If you do \mybold{not} roll a Failure, the Duration Die moves \DCDOWN
+}
+
+
+Some \mypg{Arcana}{arcana} will have a \Duration associated with them; the dice type depends on the number of \DICE invested in the invocation of the Arcana:
+
+  \mytable{Y Y} {
+    \thead{\DICE}  & \thead{Duration} \\
+  } {
+    1 & d4  \\
+    2 & d6 \\
+    3 & d8 \\
+    4 & d10 \\
+    5 & d12 \\
+    6+ & d16 \\
+  }
+
+
+\example{Tito the One-Armed is struck by a Ghast, fails his Save, and is paralyzed for \DUR{d4}. At the Bottom of the Moment, he rolls a d4 - and gets a 3. No bueno. He remains paralyzed while the Ghast slowly takes his throat in its teeth. Had Tito rolled a 1 or a 2, he would have shaken the paralysis off and hopefully fought his way free!}
+
+\newpage
+
+\myhighlight{Resource Dice}{dice-asset}   \UD
+
+\ed{The Resource Die is based off of the concept of the Usage Die, a mechanic invented by David Black (to the best of my knowledge).}
+
+Resource Dice are used to keep track of how many uses a consumable has left. The consumable may be physical - \mypg{Equipment}{gear-equipment}, \mypg{Fetishes}{fetishes}, etc. - or abstract - \mypg{Personality}{adventurer-personality}, \mypg{Grace}{vulgate-sacraments}, etc.
+
+You'll see a Duration Die written like \UDD{d4}, which tells you how much of the resource you have left. When you roll a Failure with any kind of Resource Die, move the die \DCDOWN. If you roll a d2, the Resource Dice is \mybold{Spent}.
+
+Certain Resource Dice might have a \MAX value. For example, the Resource Die that represents your \mypg{Armor}{gear-armor} might be a d8 \MAX, but you've taken a few hits and its \UD is currently at a d4.  Unless otherwise specified, Failure affects the current and not the \MAX value i.e. "your \PRE moves \DCDOWN" vs. "your \MAX: \PRE moves \DCDOWN".
+
+\cbreak
+
+If you want to combine or split Resource Dice, you can do so as long as:
+
+  \mybullet {
+    \item the die to be combined or split are some kind of \mypg{Gear}{gear};
+    \item the die is combined with another Resource Die of the same type;
+    \item the die is split into two Resource Dice of the same type; and
+    \item the die is greater than d4 (if splitting) or less than d20 (if combining)
+  }
+
+  \mytable{Y Y Y}{
+    \thead{Resource Die} & \thead{Combine} & \thead{Split} \\
+  }{
+    d2 & d3 & n/a \\
+    d3 & d4 & n/a \\
+    d4 & d6 & n/a \\
+    d6 & d10 & 2 d4 \\  
+    d8 & d12 & 2 d6 \\
+    d10 & d16 & 1 d6 + 1 d8 \\
+    d12 & d20 & 2 d8 \\
+    d16 & d24 & 2 d10 \\
+    d20 & n/a &  2 d12 \\
+    d24 & n/a & 2 d16 
+  }
+
+
+\newpage
+
+\end{multicols*}
+\mysubsection{Tries}{dice-tries}
+
+\begin{center}
+
+  \mytable{l l Y} {
+  } {
+    \RO & Roll 20 & Roll a 20 or better with a combination of dice.   \\
+    \RS & Roll to Succeed & Roll higher than a 1 or a 2 on a single die. \\
+    \RB & Roll to Beat & Roll a specific number or better with a combination of dice. \\
+  }
+\end{center}
+
+\begin{multicols*}{2}\raggedcolumns
+
+\myhighlight{Roll Twenty}{rolls-roll-twenty}    \RO
+
+In a \mybold{Roll Twenty} try, you're attempting to roll a \mybold{20 or better} with a combination of dice, modifiers, and "Bumping". Think of it as "building a 20" using as many dice rolls and modifiers as you're allowed. A 19 fails, a 20 succeeds.
+
+\myhighlight{Roll to Succeed}{rolls-roll-to-succeed}  \RS
+
+In a \mybold{Roll to Succeed} try, you only fail if you roll a Failure (a natural 1 or 2). You will always roll a single die when making an \RS try, with no modifiers. 
+
+\myimage{game/DiceChain}
+
+\cbreak
+
+\myhighlight{Roll to Beat}{rolls-roll-to-beat}  \RB
+
+In a \mybold{Roll to Beat} try, you're trying to a) beat another roll on the table, or b) beat a static number assigned by the Arbiter. The dice you roll will be defined with the \RB.
+
+If an Adventurer is making a \RB try against a \mypg{Monster}{monsters}, the Monster adds its \HD as a modifier to its roll i.e. a 6 \HD Monster adds a +6 to its roll. Ties go to the Allies. If there's a tie between Allies, roll a d6 and add its result to your \RB. Keep going until there's a winner.
+
+\examples {%
+  An orc tries to push a barbarian off a ledge.  Both the orc and the barbarian try a \RBTRY{\VIG}{\VIG}, and the highest roll wins. \myskip
+
+  A sorcerer casts Battering Beam at a kobold.  The kobold fails its Save and must try a \RBTRY{\VIG}{\INT} against the Philosopher's \INT. \myskip 
+
+  Two Allies rush toward an idol teetering on the brink of a chasm.  They each try a \RBTRY{Init}{Init} test to see who gets there first. \myskip
+
+  A Knave tries to hide in the shadows to sneak up behind his opponent. The Arbiter gives this a Difficulty of 4, meaning the Adventurer must roll a 4 or better with their \RBTRY{\KNAVE}{4}.
+
+}
